@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/BookMyHomestay/static/css/main.e551634d.css",
-    "main.js": "/BookMyHomestay/static/js/main.ab6c5dd9.js",
+    "main.js": "/BookMyHomestay/static/js/main.72d207be.js",
     "index.html": "/BookMyHomestay/index.html",
     "main.e551634d.css.map": "/BookMyHomestay/static/css/main.e551634d.css.map",
-    "main.ab6c5dd9.js.map": "/BookMyHomestay/static/js/main.ab6c5dd9.js.map"
+    "main.72d207be.js.map": "/BookMyHomestay/static/js/main.72d207be.js.map"
   },
   "entrypoints": [
     "static/css/main.e551634d.css",
-    "static/js/main.ab6c5dd9.js"
+    "static/js/main.72d207be.js"
   ]
 }
