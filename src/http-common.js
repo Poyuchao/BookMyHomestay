@@ -1,4 +1,4 @@
 import axios from "axios";
 export default axios.create({
-    baseURL:"http://localhost:3000/BookMyHomestay/"
+    baseURL:"https://poyuchao.github.io/BookMyHomestay/"
 })
