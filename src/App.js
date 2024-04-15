@@ -4,14 +4,14 @@ import Homestay from "./pages/Homestay";
 import FileService from "./services/FileService";
 import Link from "./conponents/link/Link";
 import Login from "./pages/Login";
-import Logout from "./pages/Logout";
+// import Logout from "./pages/Logout";
 import Admin from "./pages/Admin";
 import { AES, enc } from "crypto-js";
 import { client, admin } from "./class/user";
 import Favorite, { HomestayObj } from './class/favoriteList'
 import SpLoader from "./conponents/SpinnerLoader/SpinnerLoader";
 import FavoriteList from "./conponents/favoriteList/FavoriteList"
-
+ 
 
 
 
