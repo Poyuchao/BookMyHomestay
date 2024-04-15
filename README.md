@@ -1,74 +1,61 @@
-<<<<<<< HEAD
-# booking-homestay-web
-=======
-# Getting Started with Create React App
+# BookMyHomestay
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Welcome to **BookMyHomestay**, a dynamic web application designed to help users find their ideal homestay. This application simplifies the process of searching and booking homestays by offering personalized recommendations based on user preferences and data stored locally. Our system focuses on enhancing user experience by maintaining a robust login system, an admin dashboard for site management, and effective use of local and session storage to handle temporary data securely.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+- **Homestay Recommendations**: Automatically recommends homestays based on user preferences and data.
+- **User Authentication**: Secure login system to manage user sessions and data.
+- **Admin Dashboard**: Allows site administrators to manage users and homestay listings.
+- **Data Storage**: Utilizes JSON files to store user and homestay data locally for rapid access and manipulation.
+- **Security**: Implements encryption for session data to enhance privacy and security.
+- **User Favorites**: Users can manage their favorite homestays and view them at any time.
 
-### `npm start`
+## Technologies
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **React.js**: A JavaScript library for building user interfaces.
+- **React Router**: For handling in-app routing.
+- **Local Storage and Session Storage**: For managing temporary data and sessions state.
+- **Crypto-JS**: To secure user data using encryption.
+- **Bootstrap**: For styling and responsive design.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Getting Started
 
-### `npm test`
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Prerequisites
 
-### `npm run build`
+Before you begin, ensure you have the following software installed on your computer:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- **Node.js**
+  - Check Node installation: `node --version`
+- **npm**
+  - Check npm installation: `npm --version`
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Installation
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1. **Clone the repo:**
+   ```bash
+   git clone https://github.com/Poyuchao/BookMyHomestay.git
 
-### `npm run eject`
+2. **Install NPM packages:**
+   ```bash
+   npm install
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+3. **Run the application**
+   ```bash
+   npm start
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Usage
+**Normal users**
+  - Navigate to the homepage to view recommended homestays.
+  - Use the login feature to access personalized features such as favorites.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### Admin users
+**Admin users**
+  - Access the admin dashboard to manage users and homestay listings.
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
->>>>>>> george
+### Contact 
+  - PoYu Chao - killyen444@gmail.com
+  - Project Link: https://poyuchao.github.io/BookMyHomestay/
