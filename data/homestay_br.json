@@ -1,0 +1,222 @@
+[
+  {
+    "id": "001",
+    "title": "hotel no centro da cidade",
+    "desc": "Este retiro aconchegante está localizado no coração da cidade. É um lugar perfeito para um casal ou uma pessoa solteira. Melhor lugar para a sua estadia.",
+    "location": "Central",
+    "rating": "4",
+    "price_per_month": "1450",
+    "amenities": ["WiFi", "Ar-condicionado", "Aceita animais de estimação"],
+    "vegetarian_friendly": true,
+    "image_path": "/img/Central_City_Cozy_Retreat.png"
+  },
+  {
+    "id": "002",
+    "title": "Loft Moderno na Zona Oeste",
+    "desc": "Loft elegante com design contemporâneo, com academia e piscina. ",
+    "location": "West_Side",
+    "rating": "4",
+    "price_per_month": "1350",
+    "amenities": ["WiFi", "Academia", "Piscina"],
+    "vegetarian_friendly": true,
+    "image_path": "/img/West_Side_Modern_Loft.png"
+  },
+  {
+    "id": "003",
+    "title": "Casa de Herança na Zona Leste",
+    "desc": "Esta encantadora casa de herança está localizada no coração da Zona Leste. É um lugar perfeito para uma família ou um grupo de amigos.",
+    "location": "East_Side",
+    "rating": "4",
+    "price_per_month": "1200",
+    "amenities": ["WiFi", "Ar-condicionado", "Cozinha"],
+    "vegetarian_friendly": true,
+    "image_path": "/img/East_Side_Heritage_Home.png"
+  },
+  {
+    "id": "004",
+    "title": "Estúdio em South Vancouver",
+    "desc":"Estúdio compacto e eficiente em South Vancouver, oferecendo amenidades essenciais, incluindo acesso à academia. Não adequado para vegetarianos.",
+    "location": "South_Side",
+    "rating": "4",
+    "price_per_month": "1100",
+    "amenities": ["WiFi", "Aceita animais de estimação", "Academia"],
+    "vegetarian_friendly": false,
+    "image_path": "/img/South_Vancouver_Studio.png"
+  },
+  {
+    "id": "005",
+    "title": "Loft Artístico no Centro",
+    "desc":"Espaço criativo cheio de estilo artístico, localizado no centro e equipado com todo o conforto moderno. ",
+    "location": "Central",
+    "rating": "3",
+    "price_per_month": "1000",
+    "amenities": ["WiFi", "Ar-condicionado", "Cozinha"],
+    "vegetarian_friendly": true,
+    "image_path": "/img/Central_Artistic_Loft.png"
+  },
+  {
+    "id": "006",
+    "title": "Retiro Ecológico na Zona Oeste",
+    "desc": "Retiro ecológico situado na Zona Oeste, com piscina e acomodações que aceitam animais de estimação. Uma escapadela serena da vida na cidade.",
+    "location": "West_Side",
+    "rating": "4",
+    "price_per_month": "950",
+    "amenities": ["WiFi", "Piscina", "Aceita animais de estimação"],
+    "vegetarian_friendly": true,
+    "image_path": "img/West_Side_Green_Retreat.png"
+  },
+  {
+    "id": "007",
+    "title": "cabana aconchegante",
+    "desc": "Casa de campo pitoresca no East Side que combina charme tradicional com comodidades modernas, como academia. ",
+    "location": "East_Side",
+    "rating": "5",
+    "price_per_month": "800",
+    "amenities": ["WiFi", "Air Conditioning", "Gym"],
+    "vegetarian_friendly": false,
+    "image_path": "/img/East_Side_Cozy_Cottage.png"
+  },
+  {
+    "id": "008",
+    "title": "South Vancouver Historic Mansion",
+    "desc": "Step back in time in this majestic mansion, featuring luxurious amenities and a pool. Perfect for those seeking a grand experience.",
+    "location": "South_Side",
+    "rating": "5",
+    "price_per_month": "1200",
+    "amenities": ["WiFi", "Cook", "Pool"],
+    "vegetarian_friendly": false,
+    "image_path": "img/South_Vancouver_Historic_Mansion.png"
+  },
+  {
+    "id": "009",
+    "title": "Central Luxury Penthouse",
+    "desc":  "Indulge in unparalleled luxury in our penthouse, offering stunning city views, a pool, and a cook. The epitome of city living.",
+    "location": "Central",
+    "rating": "5",
+    "price_per_month": "1800",
+    "amenities": ["WiFi", "Air Conditioning", "Pet-friendly","Cook", "Pool"],
+    "vegetarian_friendly": true,
+    "image_path": "img/Central_Luxury_Penthouse.png"
+  },
+  {
+    "id": "010",
+    "title": "Casa de família no lado oeste",
+    "desc": "Casa espaçosa e acolhedora na Zona Oeste, perfeita para famílias. Inclui uma cozinha totalmente equipada para refeições caseiras.",
+    "location": "West_Side",
+    "rating": "4",
+    "price_per_month": "850",
+    "amenities": ["WiFi", "Cook"],
+    "vegetarian_friendly": true,
+    "image_path": "img/West_Side_Family_Home.png"
+  },
+  {
+    "id": "011",
+    "title": "Casa na árvore urbana no lado leste",
+    "desc": "Experiência única em uma casa na árvore no coração da cidade, oferecendo um retiro aconchegante com acesso Wi-Fi. Ideal para amantes da natureza.",
+    "location": "East_Side",
+    "rating": "2",
+    "price_per_month": "400",
+    "amenities": ["WiFi"],
+    "vegetarian_friendly": true,
+    "image_path": "img/East_Side_urban_Treehouse.png"
+  },
+  {
+    "id": "012",
+    "title": "Loft com jardim no sul de Vancouver",
+    "desc": "Loft tranquilo com jardim em South Vancouver, com academia e acomodações que aceitam animais de estimação. Um oásis tranquilo na cidade.",
+    "location": "South_Side",
+    "rating": "3",
+    "price_per_month": "1200",
+    "amenities": ["WiFi", "Gym", "Pet-friendly"],
+    "vegetarian_friendly": true,
+    "image_path": "/img/South_Vancouver_Garden_Loft.png"
+  },
+  {
+    "id": "013",
+    "title": "Central Chic Apartment",
+    "desc": "Stylish and chic apartment in the heart of the city, offering a pool and cook. Ideal for those seeking a trendy urban experience.",
+    "location": "Central",
+    "rating": "4",
+    "price_per_month": "1200",
+    "amenities": ["WiFi", "Air Conditioning", "Pool","cook"],
+    "vegetarian_friendly": false,
+    "image_path": "/img/Central_chic_Apartment.png"
+  },
+  {
+    "id": "014",
+    "title": "Quarto Boutique Lado Oeste",
+    "desc": "Quarto boutique no West Side, com WiFi e ar-condicionado. Perfeito para viajantes individuais ou casais com orçamento limitado.",
+    "location": "West_Side",
+    "rating": "3",
+    "price_per_month": "700",
+    "amenities": ["WiFi", "Air Conditioning"],
+    "vegetarian_friendly": true,
+    "image_path": "/img/West_Side_Boutique_Room.png"
+  },
+  {
+    "id": "015",
+    "title": "East Side Studio Plus",
+    "desc": "Modern studio with additional amenities like a gym and air conditioning, located in the vibrant East Side. Ideal for solo travelers.",
+    "location": "East_Side",
+    "rating": "4",
+    "price_per_month": "1200",
+    "amenities": ["WiFi", "Gym", "Air Conditioning"],
+    "vegetarian_friendly": true,
+    "image_path": "img/East_Side_Studio_Plus.png"
+  },
+  {
+    "id": "016",
+    "title": "South Vancouver Hidden Gem",
+    "desc": "Discover this hidden gem in South Vancouver, offering a gym and pet-friendly accommodations. A cozy retreat for nature lovers.",
+    "location": "South_Side",
+    "rating": "5",
+    "price_per_month": "1250",
+    "amenities": ["WiFi", "Air Conditioning", "Pet-friendly"],
+    "vegetarian_friendly": true,
+    "image_path": "/img/South_Vancouver_Hidden_Gem.png"
+  },
+  {
+    "id": "017",
+    "title": "Central Industrial Loft",
+    "desc": "Industrial loft in the heart of the city, offering a unique living experience with WiFi and air conditioning. Ideal for urban explorers.",
+    "location": "Central",
+    "rating": "3",
+    "price_per_month": "900",
+    "amenities": ["WiFi", "Air Conditioning"],
+    "vegetarian_friendly": false,
+    "image_path": "/img/Central_Industrial_Loft.png"
+  },
+  {
+    "id": "018",
+    "title": "West Side Mini Mansion",
+    "desc": "Luxurious mini mansion in the West Side, featuring a gym and pet-friendly accommodations. Perfect for those seeking a grand experience.",
+    "location": "West_Side",
+    "rating": "4",
+    "price_per_month": "1300",
+    "amenities": ["WiFi", "Pet-friendly", "Air Conditioning","Gym"],
+    "vegetarian_friendly": false,
+    "image_path": "/img/West_Side_Mini_Mansion.png"
+  },
+  {
+    "id": "019",
+    "title": "Estúdio Ecológico East Side",
+    "desc": "Estúdio ecológico no vibrante East Side, com academia e cozinheira. Ideal para quem procura uma experiência urbana sustentável.",
+    "location": "East_Side",
+    "rating": "4",
+    "price_per_month": "800",
+    "amenities": ["WiFi", "Cook", "Gym"],
+    "vegetarian_friendly": true,
+    "image_path": "/img/East_Side_Eco_Studio.png"
+  },
+  {
+    "id": "020",
+    "title": "South Vancouver Sky High Condo",
+    "desc": "Affordable condo offering basic accommodations with breathtaking views. Ideal for budget-conscious travelers looking for a unique stay.",
+    "rating": "1",
+    "location": "South_Side",
+    "price_per_month": "400",
+    "amenities": ["WiFi"],
+    "vegetarian_friendly": true,
+    "image_path": "/img/South_Vancouver_Sky_High_Condo.png"
+  }
+]

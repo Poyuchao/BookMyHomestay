@@ -1,0 +1,222 @@
+[
+    {
+      "id": "001",
+      "title": "센트럴 시티 코지 리트릿",
+      "desc": "이 아늑한 휴양지는 도시의 중심부에 위치하고 있습니다. 커플이나 혼자 있기에 완벽한 장소입니다. 숙박하기에 가장 적합한 장소",
+      "location": "Central",
+      "rating": "4",
+      "price_per_month": "1450",
+      "amenities": ["WiFi", "에어컨 사용가능", "펫프랜들리"],
+      "vegetarian_friendly": true,
+      "image_path": "/img/Central_City_Cozy_Retreat.png"
+    },
+    {
+      "id": "002",
+      "title": "서쪽의 현대적인 로프트",
+      "desc": "현대적인 디자인의 스타일리시한 로프트, 체육관과 수영장이 특징입니다. 편리한 West Side 위치를 찾는 현대 여행자에게 적합합니다.",
+      "location": "West_Side",
+      "rating": "4",
+      "price_per_month": "1350",
+      "amenities": ["WiFi", "헬스장", "수영장"],
+      "vegetarian_friendly": true,
+      "image_path": "/img/West_Side_Modern_Loft.png"
+    },
+    {
+      "id": "003",
+      "title": "이스트 사이드 헤리티지 홈",
+      "desc": "이 매력적인 헤리티지 홈은 East Side의 중심부에 위치하고 있습니다. 가족이나 친구 모임을 위한 완벽한 장소입니다.",
+      "location": "East_Side",
+      "rating": "4",
+      "price_per_month": "1200",
+      "amenities": ["WiFi", "에어컨 사용가능", "요리가능"],
+      "vegetarian_friendly": true,
+      "image_path": "/img/East_Side_Heritage_Home.png"
+    },
+    {
+      "id": "004",
+      "title": "사우스 밴쿠버 스튜디오",
+      "desc":"West Side에 자리잡은 친환경 휴양지, 수영장과 반려동물 친화적인 숙박시설이 특징입니다",
+      "location": "South_Side",
+      "rating": "4",
+      "price_per_month": "1100",
+      "amenities": ["WiFi", "펫프랜들리", "헬스장"],
+      "vegetarian_friendly": false,
+      "image_path": "/img/South_Vancouver_Studio.png"
+    },
+    {
+      "id": "005",
+      "title": "센트럴 아티스틱 로프트",
+      "desc":"전통적인 매력과 체육관 같은 현대 편의시설이 조화를 이루고 있습니다. 평화롭고 프라이빗한 숙박 제공.",
+      "location": "Central",
+      "rating": "3",
+      "price_per_month": "1000",
+      "amenities": ["WiFi", "에어컨 사용가능", "요리가능"],
+      "vegetarian_friendly": true,
+      "image_path": "/img/Central_Artistic_Loft.png"
+    },
+    {
+      "id": "006",
+      "title": "웨스트사이드 모던 로프트",
+      "desc": "West Side에 자리잡은 친환경적인 휴양지, 수영장과 애완동물 친화적인 숙박시설이 특징입니다. 도시 생활로부터의 고요한 탈출",
+      "location": "West_Side",
+      "rating": "4",
+      "price_per_month": "950",
+      "amenities": ["WiFi", "수영장", "펫프랜들리"],
+      "vegetarian_friendly": true,
+      "image_path": "img/West_Side_Green_Retreat.png"
+    },
+    {
+      "id": "007",
+      "title": "동쪽의 코지 사이드",
+      "desc": "전통적인 매력과 체육관 같은 현대적인 편의시설이 조화를 이룹니다. 평화롭고 개인적인 숙박을 제공합니다.",
+      "location": "East_Side",
+      "rating": "5",
+      "price_per_month": "800",
+      "amenities": ["WiFi", "에어컨 사용가능", "헬스장"],
+      "vegetarian_friendly": false,
+      "image_path": "/img/East_Side_Cozy_Cottage.png"
+    },
+    {
+      "id": "008",
+      "title": "남쪽 헤리티지 고급 하우스",
+      "desc": "고급스러운 시설과 수영장이 특징인 이 장엄한 저택에서 시간으로 돌아가십시오.",
+      "location": "South_Side",
+      "rating": "5",
+      "price_per_month": "1200",
+      "amenities": ["WiFi", "요리가능", "수영장"],
+      "vegetarian_friendly": false,
+      "image_path": "/img/South_Vancouver_Historic_Mansion.png"
+    },
+    {
+      "id": "009",
+      "title": "센트럴 럭셔리 펜트하우스",
+      "desc":  "도시 중심부의 독특한 트리하우스 경험, WiFi 접속으로 편안한 휴식을 제공합니다.",
+      "location": "Central",
+      "rating": "5",
+      "price_per_month": "1800",
+      "amenities": ["WiFi", "에어컨 사용가능", "펫프랜들리","요리가능", "수영장"],
+      "vegetarian_friendly": true,
+      "image_path": "/img/Central_Luxury_Penthouse.png"
+    },
+    {
+      "id": "010",
+      "title": "서쪽의 프렌들리한 하우스",
+      "desc": "체육관과 애완동물 친화적인 숙소가 특징입니다. 도시의 평화로운 오아시스",
+      "location": "West_Side",
+      "rating": "4",
+      "price_per_month": "850",
+      "amenities": ["WiFi", "요리가능"],
+      "vegetarian_friendly": true,
+      "image_path": "img/West_Side_Family_Home.png"
+    },
+    {
+      "id": "011",
+      "title": "이스트 사이드 서브얼번 하우스",
+      "desc": "도심 속 독특한 트리하우스 체험, WiFi 접속으로 아늑한 휴식 제공. 자연을 사랑하는 사람들에게 이상적입니다..",
+      "location": "East_Side",
+      "rating": "2",
+      "price_per_month": "400",
+      "amenities": ["WiFi"],
+      "vegetarian_friendly": true,
+      "image_path": "/img/East_Side_urban_Treehouse.png"
+    },
+    {
+      "id": "012",
+      "title": "사우스 밴쿠버 가든 로프트",
+      "desc": "사우스 밴쿠버의 트란퀼 가든 로프트, 헬스장과 펫프랜들리 시설이 특징입니다. 도시의 평화로운 오아시스.",
+      "location": "South_Side",
+      "rating": "3",
+      "price_per_month": "1200",
+      "amenities": ["WiFi", "헬스장", "펫프랜들리"],
+      "vegetarian_friendly": true,
+      "image_path": "/img/South_Vancouver_Garden_Loft.png"
+    },
+    {
+      "id": "013",
+      "title": "센트럴 칙 아파트",
+      "desc": "도심의 세련되고 시크한 아파트로 수영장과 요리가능을 제공합니다. 트렌디한 도심 경험을 추구하는 사람들에게 이상적입니다.",
+      "location": "Central",
+      "rating": "4",
+      "price_per_month": "1200",
+      "amenities": ["WiFi", "에어컨 사용가능", "수영장","요리가능"],
+      "vegetarian_friendly": false,
+      "image_path": "/img/Central_chic_Apartment.png"
+    },
+    {
+      "id": "014",
+      "title": "서쪽 부티크 하우스",
+      "desc": "WiFi 및 에어컨 사용가능을 제공하는 West Side의 부티크 룸. 저렴한 가격으로 혼자 여행하는 사람이나 커플에게 적합합니다.",
+      "location": "West_Side",
+      "rating": "3",
+      "price_per_month": "700",
+      "amenities": ["WiFi", "에어컨 사용가능"],
+      "vegetarian_friendly": true,
+      "image_path": "/img/West_Side_Boutique_Room.png"
+    },
+    {
+      "id": "015",
+      "title": "동쪽 스튜디오 사이드",
+      "desc": "활기찬 이스트 사이드에 위치한 헬스장 및 에어컨 사용가능과 같은 부대 편의 시설을 갖춘 현대식 스튜디오. 혼자 여행하기에 이상적입니다.",
+      "location": "East_Side",
+      "rating": "4",
+      "price_per_month": "1200",
+      "amenities": ["WiFi", "헬스장", "에어컨 사용가능"],
+      "vegetarian_friendly": true,
+      "image_path": "img/East_Side_Studio_Plus.png"
+    },
+    {
+      "id": "016",
+      "title": "남밴쿠버 히든 젬",
+      "desc": "헬스장과 펫프랜들리를 제공하는 사우스 밴쿠버의 숨겨진 보석을 발견하세요. 자연을 사랑하는 사람들을 위한 아늑한 휴양지입니다.",
+      "location": "South_Side",
+      "rating": "5",
+      "price_per_month": "1250",
+      "amenities": ["WiFi", "에어컨 사용가능", "펫프랜들리"],
+      "vegetarian_friendly": true,
+      "image_path": "/img/South_Vancouver_Hidden_Gem.png"
+    },
+    {
+      "id": "017",
+      "title": "산업 로프트",
+      "desc": "도시 중심부에 있는 산업용 다락방으로 WiFi와 에어컨 사용가능으로 독특한 생활 경험을 제공합니다. 도시 탐험가에게 이상적입니다.",
+      "location": "Central",
+      "rating": "3",
+      "price_per_month": "900",
+      "amenities": ["WiFi", "에어컨 사용가능"],
+      "vegetarian_friendly": false,
+      "image_path": "/img/Central_Industrial_Loft.png"
+    },
+    {
+      "id": "018",
+      "title": "서쪽 미니 저택",
+      "desc": "웨스트 사이드의 고급스러운 미니 저택, 헬스장과 펫프랜들리 시설을 갖추고 있습니다. 웅장한 경험을 추구하는 사람들에게 적합합니다.",
+      "location": "West_Side",
+      "rating": "4",
+      "price_per_month": "1300",
+      "amenities": ["WiFi", "펫프랜들리", "에어컨 사용가능","헬스장"],
+      "vegetarian_friendly": false,
+      "image_path": "/img/West_Side_Mini_Mansion.png"
+    },
+    {
+      "id": "019",
+      "title": "이스트 사이드 미니 친환경 스튜디오",
+      "desc": "활발한 이스트 사이드의 친환경 스튜디오로, 헬스장과 요리가능을 제공합니다. 지속 가능한 도시 경험을 추구하는 사람들에게 이상적입니다.",
+      "location": "East_Side",
+      "rating": "4",
+      "price_per_month": "800",
+      "amenities": ["WiFi", "요리가능", "헬스장"],
+      "vegetarian_friendly": true,
+      "image_path": "/img/East_Side_Eco_Studio.png"
+    },
+    {
+      "id": "020",
+      "title": "스카이 하이 콘도",
+      "desc": "숨막히는 전망의 기본 숙박 시설을 제공하는 저렴한 콘도. 독특한 숙박 시설을 찾는 예산에 민감한 여행객에게 이상적입니다.",
+      "rating": "1",
+      "location": "South_Side",
+      "price_per_month": "400",
+      "amenities": ["WiFi"],
+      "vegetarian_friendly": true,
+      "image_path": "/img/South_Vancouver_Sky_High_Condo.png"
+    }
+  ]
