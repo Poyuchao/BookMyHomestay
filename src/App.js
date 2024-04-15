@@ -239,7 +239,7 @@ function App() {
       {pending ? (
         <SpLoader pending={pending} setPending={setPending}/>
       ) : (
-        <BrowserRouter>
+        <BrowserRouter  basename="/BookMyHomestay">
           <Routes>
             <Route path="/" element={<Link loginUser={loginUser} />}>
               <Route index element={<Homestay loginUser={loginUser} logout={logoutUser} countLike={countLike} handleCountLike={handleCountLike} favoriteListObj={favoriteListObj} setPending={setPending}/>} />
