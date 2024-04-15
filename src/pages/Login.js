@@ -57,7 +57,7 @@ const Login = (props) => {
           <div className="card border-light-subtle shadow-sm" >
             <div className="row g-0">
               <div className="col-12 col-md-6">
-                <img className="img-fluid rounded-start w-100 h-100 object-fit-cover" loading="lazy" src="../BookMyHomestay/img/bookmyhomestay-blue.png" alt="BootstrapBrain Logo" />
+                <img className="img-fluid rounded-start w-100 h-100 object-fit-cover" loading="lazy" src="/BookMyHomestay/img/bookmyhomestay-blue.png" alt="BootstrapBrain Logo" />
               </div>
               <div className="col-12 col-md-6">
                 <div className="card-body p-3 p-md-4 p-xl-5">

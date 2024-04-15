@@ -132,7 +132,7 @@ const HomestayList = (props) => {
                                 </div>
 
                                 <div className="siImg-wrapper">
-                                    <img src={`../BookMyHomestay${homestay.image_path}`} alt="homestay" className="siImg" />
+                                    <img src={`BookMyHomestay${homestay.image_path}`} alt="homestay" className="siImg" />
                                 </div>
 
                                 <div className="homestayInfo-wrapper">
