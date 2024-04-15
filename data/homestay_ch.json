@@ -161,7 +161,7 @@
       "WiFi"
     ],
     "vegetarian_friendly": true,
-    "image_path": "/img/East_Side_urban_Treehouse.png"
+    "image_path": "/img/East_Side_Urban_Treehouse.png"
   },
   {
     "id": "012",
@@ -192,7 +192,7 @@
       "cook"
     ],
     "vegetarian_friendly": false,
-    "image_path": "/img/Central_chic_Apartment.png"
+    "image_path": "/img/Central_Chic_Apartment.png"
   },
   {
     "id": "014",
