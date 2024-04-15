@@ -1,0 +1,297 @@
+[
+  {
+    "id": "001",
+    "title": "中央城市舒適撤退",
+    "desc": "這個舒適的撤退位於城市的中心。這是一個完美的地方，適合一對夫妻或單身者。最好的住宿地點。",
+    "location": "Central",
+    "rating": "4",
+    "price_per_month": "1450",
+    "amenities": [
+      "WiFi",
+      "Air Conditioning",
+      "Pet-friendly"
+    ],
+    "vegetarian_friendly": true,
+    "image_path": "/img/Central_City_Cozy_Retreat.png"
+  },
+  {
+    "id": "002",
+    "title": "西區現代閣樓",
+    "desc": "時尚的閣樓，採用現代設計，設有健身房和游泳池。非常適合尋找便利西區位置的現代旅行者。",
+    "location": "West_Side",
+    "rating": "4",
+    "price_per_month": "1350",
+    "amenities": [
+      "WiFi",
+      "Gym",
+      "Pool"
+    ],
+    "vegetarian_friendly": true,
+    "image_path": "/img/West_Side_Modern_Loft.png"
+  },
+  {
+    "id": "003",
+    "title": "東區傳統之家",
+    "desc": "這個迷人的傳統之家位於東區的中心。這是一個完美的地方，適合家庭或一群朋友。",
+    "location": "East_Side",
+    "rating": "4",
+    "price_per_month": "1200",
+    "amenities": [
+      "WiFi",
+      "Air Conditioning",
+      "Cook"
+    ],
+    "vegetarian_friendly": true,
+    "image_path": "/img/East_Side_Heritage_Home.png"
+  },
+  {
+    "id": "004",
+    "title": "溫哥華南區工作室",
+    "desc": "南溫哥華的緊湊高效工作室，提供包括健身房在內的基本設施。不適合素食主義者。",
+    "location": "South_Side",
+    "rating": "4",
+    "price_per_month": "1100",
+    "amenities": [
+      "WiFi",
+      "Pet-friendly",
+      "Gym"
+    ],
+    "vegetarian_friendly": false,
+    "image_path": "/img/South_Vancouver_Studio.png"
+  },
+  {
+    "id": "005",
+    "title": "中央藝術閣樓",
+    "desc": "充滿藝術風情的創意空間，位於市中心，配備所有現代舒適設施。藝術愛好者的舒適撤退。",
+    "location": "Central",
+    "rating": "3",
+    "price_per_month": "1000",
+    "amenities": [
+      "WiFi",
+      "Air Conditioning",
+      "Cook"
+    ],
+    "vegetarian_friendly": true,
+    "image_path": "/img/Central_Artistic_Loft.png"
+  },
+  {
+    "id": "006",
+    "title": "西區綠色撤退",
+    "desc": "位於西區的環保度假村，設有游泳池和寵物友好住宿。遠離城市生活的寧靜之地。",
+    "location": "West_Side",
+    "rating": "4",
+    "price_per_month": "950",
+    "amenities": [
+      "WiFi",
+      "Pool",
+      "Pet-friendly"
+    ],
+    "vegetarian_friendly": true,
+    "image_path": "img/West_Side_Green_Retreat.png"
+  },
+  {
+    "id": "007",
+    "title": "東區舒適小屋",
+    "desc": "東區的別緻小屋，融合了傳統魅力和現代設施，如健身房。提供寧靜和私密的住宿。",
+    "location": "East_Side",
+    "rating": "5",
+    "price_per_month": "800",
+    "amenities": [
+      "WiFi",
+      "Air Conditioning",
+      "Gym"
+    ],
+    "vegetarian_friendly": false,
+    "image_path": "/img/East_Side_Cozy_Cottage.png"
+  },
+  {
+    "id": "008",
+    "title": "溫哥華南區歷史豪宅",
+    "desc": "踏入這座宏偉的豪宅，享受豪華設施和游泳池。對於那些追求宏偉體驗的人來說，是完美的選擇。",
+    "location": "South_Side",
+    "rating": "5",
+    "price_per_month": "1200",
+    "amenities": [
+      "WiFi",
+      "Cook",
+      "Pool"
+    ],
+    "vegetarian_friendly": false,
+    "image_path": "img/South_Vancouver_Historic_Mansion.png"
+  },
+  {
+    "id": "009",
+    "title": "中央豪華頂層公寓",
+    "desc": "在我們的頂層公寓中，享受無與倫比的豪華，享有令人驚嘆的城市景觀，游泳池和廚師。城市生活的典範。",
+    "location": "Central",
+    "rating": "5",
+    "price_per_month": "1800",
+    "amenities": [
+      "WiFi",
+      "Air Conditioning",
+      "Pet-friendly",
+      "Cook",
+      "Pool"
+    ],
+    "vegetarian_friendly": true,
+    "image_path": "img/Central_Luxury_Penthouse.png"
+  },
+  {
+    "id": "010",
+    "title": "西區家庭之家",
+    "desc": "位於西區的寬敞而溫馨的家，非常適合家庭。配有設備齊全的廚房，供應家常菜餚。",
+    "location": "West_Side",
+    "rating": "4",
+    "price_per_month": "850",
+    "amenities": [
+      "WiFi",
+      "Cook"
+    ],
+    "vegetarian_friendly": true,
+    "image_path": "img/West_Side_Family_Home.png"
+  },
+  {
+    "id": "011",
+    "title": "東區城市樹屋",
+    "desc": "城市中心的獨特樹屋體驗，提供舒適的撤退，配備WiFi設施。理想的自然愛好者。",
+    "location": "East_Side",
+    "rating": "2",
+    "price_per_month": "400",
+    "amenities": [
+      "WiFi"
+    ],
+    "vegetarian_friendly": true,
+    "image_path": "img/East_Side_urban_Treehouse.png"
+  },
+  {
+    "id": "012",
+    "title": "南溫哥華花園閣樓",
+    "desc": "南溫哥華寧靜的花園閣樓，設有健身房和寵物友好住宿。城市中的一個寧靜綠洲。",
+    "location": "South_Side",
+    "rating": "3",
+    "price_per_month": "1200",
+    "amenities": [
+      "WiFi",
+      "Gym",
+      "Pet-friendly"
+    ],
+    "vegetarian_friendly": true,
+    "image_path": "/img/South_Vancouver_Garden_Loft.png"
+  },
+  {
+    "id": "013",
+    "title": "中央時尚公寓",
+    "desc": "位於市中心的時尚公寓，提供游泳池和廚師。適合尋求時尚都市體驗的人。",
+    "location": "Central",
+    "rating": "4",
+    "price_per_month": "1200",
+    "amenities": [
+      "WiFi",
+      "Air Conditioning",
+      "Pool",
+      "cook"
+    ],
+    "vegetarian_friendly": false,
+    "image_path": "/img/Central_chic_Apartment.png"
+  },
+  {
+    "id": "014",
+    "title": "西區精品客房",
+    "desc": "西區的精品客房，提供WiFi和空調。非常適合預算有限的獨自旅行者或情侶。",
+    "location": "West_Side",
+    "rating": "3",
+    "price_per_month": "700",
+    "amenities": [
+      "WiFi",
+      "Air Conditioning"
+    ],
+    "vegetarian_friendly": true,
+    "image_path": "/img/West_Side_Boutique_Room.png"
+  },
+  {
+    "id": "015",
+    "title": "東區工作室套房",
+    "desc": "現代工作室，配有健身房和空調等其他設施，位於充滿活力的東區。理想的獨自旅行者。",
+    "location": "East_Side",
+    "rating": "4",
+    "price_per_month": "1200",
+    "amenities": [
+      "WiFi",
+      "Gym",
+      "Air Conditioning"
+    ],
+    "vegetarian_friendly": true,
+    "image_path": "img/East_Side_Studio_Plus.png"
+  },
+  {
+    "id": "016",
+    "title": "南溫哥華隱藏寶石",
+    "desc": "在南溫哥華發現這個隱藏的寶石，提供健身房和寵物友好住宿。對自然愛好者來說是一個舒適的撤退。",
+    "location": "South_Side",
+    "rating": "5",
+    "price_per_month": "1250",
+    "amenities": [
+      "WiFi",
+      "Air Conditioning",
+      "Pet-friendly"
+    ],
+    "vegetarian_friendly": true,
+    "image_path": "/img/South_Vancouver_Hidden_Gem.png"
+  },
+  {
+    "id": "017",
+    "title": "中央工業風閣樓",
+    "desc": "位於市中心的工業風閣樓，提供獨特的生活體驗，配備WiFi和空調。理想的城市探險家。",
+    "location": "Central",
+    "rating": "3",
+    "price_per_month": "900",
+    "amenities": [
+      "WiFi",
+      "Air Conditioning"
+    ],
+    "vegetarian_friendly": false,
+    "image_path": "/img/Central_Industrial_Loft.png"
+  },
+  {
+    "id": "018",
+    "title": "西區迷你豪宅",
+    "desc": "位於西區的豪華迷你豪宅，配有健身房和寵物友好住宿。對於追求宏偉體驗的人來說是完美的選擇。",
+    "location": "West_Side",
+    "rating": "4",
+    "price_per_month": "1300",
+    "amenities": [
+      "WiFi",
+      "Pet-friendly",
+      "Air Conditioning",
+      "Gym"
+    ],
+    "vegetarian_friendly": false,
+    "image_path": "/img/West_Side_Mini_Mansion.png"
+  },
+  {
+    "id": "019",
+    "title": "東區生態工作室",
+    "desc": "位於充滿活力的東區的生態工作室，提供健身房和廚師。對於追求可持續城市體驗的人來說是理想之選。",
+    "location": "East_Side",
+    "rating": "4",
+    "price_per_month": "800",
+    "amenities": [
+      "WiFi",
+      "Cook",
+      "Gym"
+    ],
+    "vegetarian_friendly": true,
+    "image_path": "/img/East_Side_Eco_Studio.png"
+  },
+  {
+    "id": "020",
+    "title": "南溫哥華高樓公寓",
+    "desc": "提供基本住宿設施和令人驚嘆的景觀的負擔得起的公寓。對於追求獨特住宿的預算有限的旅行者來說是理想之選。",
+    "location": "South_Side",
+    "rating": "1",
+    "price_per_month": "400",
+    "amenities": ["WiFi"],
+    "vegetarian_friendly": true,
+    "image_path": "/img/South_Vancouver_Sky_High_Condo.png"
+  }
+]
