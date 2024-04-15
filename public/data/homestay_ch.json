@@ -87,7 +87,7 @@
       "Pet-friendly"
     ],
     "vegetarian_friendly": true,
-    "image_path": "img/West_Side_Green_Retreat.png"
+    "image_path": "/img/West_Side_Green_Retreat.png"
   },
   {
     "id": "007",
@@ -117,7 +117,7 @@
       "Pool"
     ],
     "vegetarian_friendly": false,
-    "image_path": "img/South_Vancouver_Historic_Mansion.png"
+    "image_path": "/img/South_Vancouver_Historic_Mansion.png"
   },
   {
     "id": "009",
@@ -134,7 +134,7 @@
       "Pool"
     ],
     "vegetarian_friendly": true,
-    "image_path": "img/Central_Luxury_Penthouse.png"
+    "image_path": "/img/Central_Luxury_Penthouse.png"
   },
   {
     "id": "010",
@@ -148,7 +148,7 @@
       "Cook"
     ],
     "vegetarian_friendly": true,
-    "image_path": "img/West_Side_Family_Home.png"
+    "image_path": "/img/West_Side_Family_Home.png"
   },
   {
     "id": "011",
@@ -161,7 +161,7 @@
       "WiFi"
     ],
     "vegetarian_friendly": true,
-    "image_path": "img/East_Side_urban_Treehouse.png"
+    "image_path": "/img/East_Side_urban_Treehouse.png"
   },
   {
     "id": "012",
@@ -221,7 +221,7 @@
       "Air Conditioning"
     ],
     "vegetarian_friendly": true,
-    "image_path": "img/East_Side_Studio_Plus.png"
+    "image_path": "/img/East_Side_Studio_Plus.png"
   },
   {
     "id": "016",
