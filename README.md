@@ -51,10 +51,16 @@ Before you begin, ensure you have the following software installed on your compu
 **Normal users**
   - Navigate to the homepage to view recommended homestays.
   - Use the login feature to access personalized features such as favorites.
+  - testing account: 
+    - username: abc@yahoo.com
+    - password: test12
 
 ### Admin users
 **Admin users**
   - Access the admin dashboard to manage users and homestay listings.
+  - testing account: 
+    - username: george@gmail.com
+    - password: 7777
 
 ### Contact 
   - PoYu Chao - killyen444@gmail.com
