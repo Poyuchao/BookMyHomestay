@@ -83,7 +83,7 @@ const FavoriteList = (props) => {
                                                 </div>
                                                 <p>{index + 1}</p>
                                                 <div className="siImg-wrapper">
-                                                    <img src={favHome.image_path} alt="favorite" className="siImg_fav" />
+                                                    <img src={`/BookMyHomestay${favHome.image_path}`}alt="favorite" className="siImg_fav" />
                                                 </div>
                                                 <div className="favoriteInfo-wrapper">
                                                     <div className="favoriteInfo">

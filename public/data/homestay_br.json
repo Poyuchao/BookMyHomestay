@@ -63,7 +63,7 @@
     "price_per_month": "950",
     "amenities": ["WiFi", "Piscina", "Aceita animais de estimação"],
     "vegetarian_friendly": true,
-    "image_path": "img/West_Side_Green_Retreat.png"
+    "image_path": "/img/West_Side_Green_Retreat.png"
   },
   {
     "id": "007",
@@ -85,7 +85,7 @@
     "price_per_month": "1200",
     "amenities": ["WiFi", "Cook", "Pool"],
     "vegetarian_friendly": false,
-    "image_path": "img/South_Vancouver_Historic_Mansion.png"
+    "image_path": "/img/South_Vancouver_Historic_Mansion.png"
   },
   {
     "id": "009",
@@ -96,7 +96,7 @@
     "price_per_month": "1800",
     "amenities": ["WiFi", "Air Conditioning", "Pet-friendly","Cook", "Pool"],
     "vegetarian_friendly": true,
-    "image_path": "img/Central_Luxury_Penthouse.png"
+    "image_path": "/img/Central_Luxury_Penthouse.png"
   },
   {
     "id": "010",
@@ -107,7 +107,7 @@
     "price_per_month": "850",
     "amenities": ["WiFi", "Cook"],
     "vegetarian_friendly": true,
-    "image_path": "img/West_Side_Family_Home.png"
+    "image_path": "/img/West_Side_Family_Home.png"
   },
   {
     "id": "011",
@@ -118,7 +118,7 @@
     "price_per_month": "400",
     "amenities": ["WiFi"],
     "vegetarian_friendly": true,
-    "image_path": "img/East_Side_urban_Treehouse.png"
+    "image_path": "/img/East_Side_Urban_Treehouse.png"
   },
   {
     "id": "012",
@@ -140,7 +140,7 @@
     "price_per_month": "1200",
     "amenities": ["WiFi", "Air Conditioning", "Pool","cook"],
     "vegetarian_friendly": false,
-    "image_path": "/img/Central_chic_Apartment.png"
+    "image_path": "/img/Central_Chic_Apartment.png"
   },
   {
     "id": "014",
@@ -162,7 +162,7 @@
     "price_per_month": "1200",
     "amenities": ["WiFi", "Gym", "Air Conditioning"],
     "vegetarian_friendly": true,
-    "image_path": "img/East_Side_Studio_Plus.png"
+    "image_path": "/img/East_Side_Studio_Plus.png"
   },
   {
     "id": "016",

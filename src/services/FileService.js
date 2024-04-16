@@ -4,7 +4,7 @@ class FileService{
 
     read(fileName){
 
-        return http.get(`../data/${fileName}.json`);
+        return http.get(`/data/${fileName}.json`);
 
     }
 

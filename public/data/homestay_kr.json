@@ -63,7 +63,7 @@
       "price_per_month": "950",
       "amenities": ["WiFi", "수영장", "펫프랜들리"],
       "vegetarian_friendly": true,
-      "image_path": "img/West_Side_Green_Retreat.png"
+      "image_path": "/img/West_Side_Green_Retreat.png"
     },
     {
       "id": "007",
@@ -107,7 +107,7 @@
       "price_per_month": "850",
       "amenities": ["WiFi", "요리가능"],
       "vegetarian_friendly": true,
-      "image_path": "img/West_Side_Family_Home.png"
+      "image_path": "/img/West_Side_Family_Home.png"
     },
     {
       "id": "011",
@@ -118,7 +118,7 @@
       "price_per_month": "400",
       "amenities": ["WiFi"],
       "vegetarian_friendly": true,
-      "image_path": "/img/East_Side_urban_Treehouse.png"
+      "image_path": "/img/East_Side_Urban_Treehouse.png"
     },
     {
       "id": "012",
@@ -140,7 +140,7 @@
       "price_per_month": "1200",
       "amenities": ["WiFi", "에어컨 사용가능", "수영장","요리가능"],
       "vegetarian_friendly": false,
-      "image_path": "/img/Central_chic_Apartment.png"
+      "image_path": "/img/Central_Chic_Apartment.png"
     },
     {
       "id": "014",
@@ -162,7 +162,7 @@
       "price_per_month": "1200",
       "amenities": ["WiFi", "헬스장", "에어컨 사용가능"],
       "vegetarian_friendly": true,
-      "image_path": "img/East_Side_Studio_Plus.png"
+      "image_path": "/img/East_Side_Studio_Plus.png"
     },
     {
       "id": "016",
