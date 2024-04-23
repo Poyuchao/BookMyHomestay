@@ -15,26 +15,26 @@ const HomestayList = (props) => {
 
     const [currentPage, setCurrentPage] = useState(1);
 
-    const [pageCount , setPageCount] = useState(0);
+    const [pageCount, setPageCount] = useState(0);
 
     const [start, setStart] = useState(0);
 
-    const [end, setEnd] = useState(5); 
-  
+    const [end, setEnd] = useState(5);
+
     useEffect(() => {
         if (props.matchingHomestays) {
             setHomestayCount(props.matchingHomestays.length);
         }
         setPageCount(Math.ceil(props.matchingHomestays.length / 5));
-        
+
     }, [props.matchingHomestays]);
 
     useEffect(() => {
         setStart((currentPage - 1) * 5);
         setEnd(currentPage * 5);
-      }, [currentPage]);
-    
-    
+    }, [currentPage]);
+
+
 
     // useEffect(() => {
     //     if( props.loginUser != null){
@@ -45,9 +45,9 @@ const HomestayList = (props) => {
     // },[])
 
     const handlePageChange = ({ selected }) => {
-        setCurrentPage(selected+1);
+        setCurrentPage(selected + 1);
         window.scrollTo(0, 320); // When I selected page num it move up to top
-      };
+    };
 
 
     function convertRatingToStar(rating) {
@@ -160,7 +160,7 @@ const HomestayList = (props) => {
                 </div>
                 {pageCount > 0 && (
                     <Pagination
-                        pageCount={Math.max(1, pageCount - 1)}
+                        pageCount={pageCount} // Use pageCount directly
                         onPageChange={handlePageChange}
                         currentPage={currentPage}
                     />
