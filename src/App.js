@@ -11,7 +11,8 @@ import { AES, enc } from "crypto-js";
 import { client, admin } from "./class/user";
 import Favorite, { HomestayObj } from './class/favoriteList'
 import SpLoader from "./conponents/SpinnerLoader/SpinnerLoader";
-import FavoriteList from "./conponents/favoriteList/FavoriteList"
+import FavoriteList from "./conponents/favoriteList/FavoriteList";
+import ListHomestay from "./pages/ListHomestay";
  
 
 
@@ -246,6 +247,7 @@ function App() {
               <Route index element={<Homestay loginUser={loginUser} logout={logoutUser} countLike={countLike} handleCountLike={handleCountLike} favoriteListObj={favoriteListObj} setPending={setPending}/>} />
               <Route path="login" element={<Login auth={Auth} loginUser={loginUser} countLike={countLike} setPending={setPending}  pending={pending} />} />
               <Route path="reg" element={<Register loginUser={loginUser} countLike={countLike} setPending={setPending}  pending={pending} />} />
+              <Route path="list" element={<ListHomestay  loginUser={loginUser} countLike={countLike} setPending={setPending}  pending={pending} logout={logoutUser}/>} />
               <Route path="admin" element={<Admin loginUser={loginUser} logout={logoutUser} users={users} countLike={countLike} setPending={setPending} />} />
               <Route path="fav" element={<FavoriteList loginUser={loginUser} logout={logoutUser} countLike={countLike} favorites={favoriteListObj} handleCountLike={handleCountLike} setPending={setPending} />} />
               {/* <Route path="logout" element={<Logout  />} />

@@ -116,7 +116,7 @@ const RegisterForm = (props) => {
                         <label className="form-check-label" htmlFor="vegetarianNo">No</label>
                         </div>
                     </div>
-                    </div>
+                  </div>
 
                     <div className="mb-3">
                         <label htmlFor="budget" className="form-label">Budget (CAD)  <span className="text-danger">*</span></label>

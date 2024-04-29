@@ -30,7 +30,7 @@ const Header = (props) => {
 
         if (props.loginUser!=null) {
             props.setPending(true); // trigger the spinner loader
-            navigate("/");
+            navigate("/list");
         }
         else{
             props.setPending(true); // trigger the spinner loader
@@ -57,7 +57,7 @@ const Header = (props) => {
                 </p>
 
                 {props.loginUser&&props.loginUser? (
-                    <button className="headerButton" onClick={goRegisterOrListYourHome} >Start Listing Your Homestay</button>
+                    <button className="headerButton" onClick={goRegisterOrListYourHome} >Click here to list Your Homestay with Us!</button>
                 ):(
                     <button className="headerButton" onClick={goRegisterOrListYourHome} >Sign in / Register</button>
                 )}
