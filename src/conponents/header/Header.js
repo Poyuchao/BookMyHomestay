@@ -3,7 +3,7 @@ import { LoremIpsum } from 'lorem-ipsum';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faHouse,faCalendarDays,faPerson} from '@fortawesome/free-solid-svg-icons';
 import { useState, useEffect } from 'react';    
-
+import { useNavigate } from "react-router-dom";
 const Header = (props) => {
 
     // Create an instance of the LoremIpsum class
@@ -12,6 +12,7 @@ const Header = (props) => {
     const loremText = lorem.generateWords(25);
 
     const [headerText, setHeaderText] = useState("Search by homestay name");
+    const navigate = useNavigate(); // use navigate hook
 
     useEffect(() => {
         if (props.language === 'kr') {
@@ -24,6 +25,19 @@ const Header = (props) => {
             setHeaderText("Start to find your amazing homestay");
         }
     }, [props.language]);
+
+    const goRegisterOrListYourHome =() =>{
+
+        if (props.loginUser!=null) {
+            props.setPending(true); // trigger the spinner loader
+            navigate("/");
+        }
+        else{
+            props.setPending(true); // trigger the spinner loader
+            navigate("/reg");
+        }
+     
+    }
 
     return (
         <div className="header">
@@ -41,7 +55,13 @@ const Header = (props) => {
                 <p className="headerDesc">
                         {loremText}
                 </p>
-                <button className="headerButton">Sign in / Register</button>
+
+                {props.loginUser&&props.loginUser? (
+                    <button className="headerButton" onClick={goRegisterOrListYourHome} >Start Listing Your Homestay</button>
+                ):(
+                    <button className="headerButton" onClick={goRegisterOrListYourHome} >Sign in / Register</button>
+                )}
+               
 
                 <div className="headerSearch">
                     <div className ="headerSearchItem">

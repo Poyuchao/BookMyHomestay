@@ -4,6 +4,7 @@ import Homestay from "./pages/Homestay";
 import FileService from "./services/FileService";
 import Link from "./conponents/link/Link";
 import Login from "./pages/Login";
+import Register from "./pages/Register";
 // import Logout from "./pages/Logout" ;
 import Admin from "./pages/Admin";
 import { AES, enc } from "crypto-js";
@@ -244,6 +245,7 @@ function App() {
             <Route path="/" element={<Link loginUser={loginUser} />}>
               <Route index element={<Homestay loginUser={loginUser} logout={logoutUser} countLike={countLike} handleCountLike={handleCountLike} favoriteListObj={favoriteListObj} setPending={setPending}/>} />
               <Route path="login" element={<Login auth={Auth} loginUser={loginUser} countLike={countLike} setPending={setPending}  pending={pending} />} />
+              <Route path="reg" element={<Register loginUser={loginUser} countLike={countLike} setPending={setPending}  pending={pending} />} />
               <Route path="admin" element={<Admin loginUser={loginUser} logout={logoutUser} users={users} countLike={countLike} setPending={setPending} />} />
               <Route path="fav" element={<FavoriteList loginUser={loginUser} logout={logoutUser} countLike={countLike} favorites={favoriteListObj} handleCountLike={handleCountLike} setPending={setPending} />} />
               {/* <Route path="logout" element={<Logout  />} />

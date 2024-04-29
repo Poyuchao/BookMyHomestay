@@ -215,7 +215,7 @@ const Homestay = (props) => {
         <div>
             {/* pass login user and logout function to navbar */}
             <Navbar loginUser={props.loginUser} logoutUser={props.logout} language={getLanguage} countLike={props.countLike} setPending={props.setPending}/>
-            <Header language={language} />
+            <Header language={language} setPending={props.setPending}  loginUser={props.loginUser}/>
 
             <div className="listContainer">
                 <div className="listWrapper">

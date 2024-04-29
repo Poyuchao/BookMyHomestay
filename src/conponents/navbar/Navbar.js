@@ -43,6 +43,7 @@ const Navbar = (props) => {
 
 
     const handleLogin = () => {
+        props.setPending(true);
         navigate('/login')
     }
 

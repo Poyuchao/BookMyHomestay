@@ -37,6 +37,11 @@ const Login = (props) => {
     })
   }
 
+  const goRegister =() =>{
+    props.setPending(true); // trigger the spinner loader
+    navigate("/reg");
+  }
+
   const togglePasswordVisibility = () => setShowPassword(!showPassword);
 
   const handleSubmit = (e) => {
@@ -109,7 +114,7 @@ const Login = (props) => {
                     <div className="col-12">
                       <hr className="mt-5 mb-4 border-secondary-subtle" />
                       <div className="d-flex gap-2 gap-md-4 flex-column flex-md-row justify-content-md-end">
-                        <a href="#!" className="link-secondary text-decoration-none">Create new account</a>
+                        <a href="" className="link-secondary text-decoration-none" onClick={goRegister} >Create new account</a>
                         <a href="#!" className="link-secondary text-decoration-none">Forgot password</a>
                       </div>
                     </div>

@@ -1,0 +1,10 @@
+
+.login-link {
+    color: red; /* Normal state color */
+    cursor: pointer;
+    text-decoration: none; 
+}
+
+.login-link:hover {
+    color: rgb(107, 3, 3); /* Color on hover */
+}
