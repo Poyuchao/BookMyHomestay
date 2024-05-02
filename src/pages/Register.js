@@ -124,11 +124,11 @@ const RegisterForm = (props) => {
                         <label htmlFor="budget" className="form-label">Maximum Budget (CAD)  <span className="text-danger">*</span></label>
                         <select className="form-control" id="budget" name="budget" value={formData.budget} onChange={handleChange} required>
                             <option value="">Select your budget </option>
-                            <option value="500">$500</option>
-                            <option value="1000">$1000</option>
-                            <option value="1500">$1500</option>
-                            <option value="2000">$2000</option>
-                            <option value="9999">$2000+ </option>
+                            <option value="500">$0~$500</option>
+                            <option value="1000">$0~$1000</option>
+                            <option value="1500">$0~$1500</option>
+                            <option value="2000">$0~$2000</option>
+                            <option value="9999">$0~$2000+ </option>
                         </select>
                     </div>
 
