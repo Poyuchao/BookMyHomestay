@@ -4,7 +4,7 @@ import './css/register.css';
 import { useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
-
+import FileService from '../services/FileService';
 
 
 const RegisterForm = (props) => {
@@ -32,6 +32,7 @@ const RegisterForm = (props) => {
           [name]: value
         }));
     };
+    
 
     const goLogin =() =>{
         props.setPending(true); // trigger the spinner loader
@@ -43,6 +44,7 @@ const RegisterForm = (props) => {
     const handleSubmit = (event) => {
       event.preventDefault();
       console.log('Form Data:', formData);
+      FileService.post('/reg', formData);
       
     };
 
@@ -119,14 +121,14 @@ const RegisterForm = (props) => {
                   </div>
 
                     <div className="mb-3">
-                        <label htmlFor="budget" className="form-label">Budget (CAD)  <span className="text-danger">*</span></label>
+                        <label htmlFor="budget" className="form-label">Maximum Budget (CAD)  <span className="text-danger">*</span></label>
                         <select className="form-control" id="budget" name="budget" value={formData.budget} onChange={handleChange} required>
                             <option value="">Select your budget </option>
-                            <option value="0-500">$0~$500</option>
-                            <option value="500-1000">$500~$1000</option>
-                            <option value="1000-1500">$1000~$1500</option>
-                            <option value="1500-2000">$1500~$2000</option>
-                            <option value="2000+">$2000+ </option>
+                            <option value="500">$500</option>
+                            <option value="1000">$1000</option>
+                            <option value="1500">$1500</option>
+                            <option value="2000">$2000</option>
+                            <option value="9999">$2000+ </option>
                         </select>
                     </div>
 
