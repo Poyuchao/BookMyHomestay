@@ -18,6 +18,7 @@ const ListHomestay = (props) => {
     const [successMessage, setSuccessMessage] = useState('');
     const [errorMessage, setErrorMessage] = useState('');
     const navigate = useNavigate(); // use navigate hook
+    
 
     const handleChange = (event) => {
         const { name, value, type, checked, files } = event.target;
@@ -139,7 +140,7 @@ const ListHomestay = (props) => {
                     <div className="mb-3">
                         <label>Amenities <span className="text-danger">*</span></label>
                         <div className="row">
-                            {["WiFi", "Air Conditioning", "Pet-friendly", "Pool", "Cook", "Gym", "Parking","Laundry","Bikes for use","Smoke alarm on each","TV","Others"].map(amenity => (
+                            {["WiFi", "Air Conditioning", "Pet-friendly", "Pool", "Cook", "Gym", "Parking","Laundry","Bikes for use","Smoke alarm on each","TV","Oven"].map(amenity => (
                                 <div key={amenity} className="col-md-4">
                                     <div className="form-check">
                                         <input
@@ -156,20 +157,7 @@ const ListHomestay = (props) => {
                                 </div>
                             ))}
                         </div>
-                        {homestayData.amenities.includes('Others') && (
-                          <div className="mb-3">
-                          <label htmlFor="othersDetail" className="form-label">Specify Other Amenities</label>
-                          <input
-                              type="text"
-                              className="form-control"
-                              id="othersDetail"
-                              name="othersDetail"
-                              value={homestayData.othersDetail}
-                              onChange={handleChange}
-                              placeholder="Enter other amenities"
-                          />
-                      </div>
-                        )}
+                       
                     </div>
                     <div className="mb-3">
                         <label className="form-label">Vegetarian Friendly <span className="text-danger">*</span></label>
