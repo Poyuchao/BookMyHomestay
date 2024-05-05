@@ -1,5 +1,7 @@
 import Navbar from '../conponents/navbar/Navbar';
 import React, { useState,useEffect } from 'react';
+import FileService from '../services/FileService';
+import { useNavigate } from "react-router-dom";
 
 const ListHomestay = (props) => {
     const [homestayData, setHomestayData] = useState({
@@ -8,12 +10,14 @@ const ListHomestay = (props) => {
         location: '',
         rating: '',
         price_per_month: '',
-        amenities: [],
-        vegetarian_friendly: false,
-        image_path: null
+        amenities: [],  //amenities: ['wifi', 'parking', 'kitchen']
+        vegetarian_friendly: '',
+        imageFile: null
     });
 
-
+    const [successMessage, setSuccessMessage] = useState('');
+    const [errorMessage, setErrorMessage] = useState('');
+    const navigate = useNavigate(); // use navigate hook
 
     const handleChange = (event) => {
         const { name, value, type, checked, files } = event.target;
@@ -32,35 +36,81 @@ const ListHomestay = (props) => {
                 }));
                
             }
-        }else if (type === 'file') {
-            console.log("hi")
+        }else if (type == 'file') {
+            console.log("here is file type");
+           
             const file = files[0]; // Get the first file from the files array
+           
             if (file) {
-                console.log("Selected file name:", file.name); // Access the file name
+                console.log("Selected file name:", file); // Access the file name
     
-                setHomestayData(prevState => ({ ...prevState, [name]: `/img/${file.name}` })); // Set the image path
+                setHomestayData(prevState => ({ ...prevState, imageFile: file  })); // Set the image path
             }
         
         } else {
       
             setHomestayData(prevState => ({ ...prevState, [name]: value }));
-            console.log("Homestay Data: image", homestayData.image_path);
+            // console.log("Homestay Data: image", homestayData.image_path);
         }
     };
 
     const handleSubmit = (event) => {
         event.preventDefault();
-     
-      
         console.log('Homestay Data:', homestayData);
-        // Further submission logic here
+        //create a new FormData object
+        const formData = new FormData();
+        // Append text data to formData
+        formData.append('title', homestayData.title);
+        formData.append('desc', homestayData.desc);
+        formData.append('location', homestayData.location);
+        formData.append('price_per_month', homestayData.price_per_month);
+        formData.append('vegetarian_friendly', homestayData.vegetarian_friendly);
+        formData.append('amenities', homestayData.amenities.join(',')); // Convert amenities array to comma-separated string
+
+        // Append image file to formData
+        if (homestayData.imageFile) {
+            formData.append('imageFile', homestayData.imageFile);
+        } else {
+            console.log('No image file is set.');
+        }
+       
+        FileService.post('/addHome', formData).then(response=>{
+            if(response.status==201){
+                setSuccessMessage('Homestay Registered successfully');
+                console.log('Homestay registered successfully');
+                setTimeout(()=>{
+                    setSuccessMessage(''); // Clear the success message
+                    props.setPending(true); // trigger the spinner loader
+                    navigate('/'); // Redirect to the home page
+                },3000);
+              
+            }
+        }).catch(error=>{
+            if (error.response.status == 401) {
+                setErrorMessage(error.response.data);
+                setTimeout(()=>{
+                    setErrorMessage(''); // Clear the success message
+                   
+                },3000);
+            }
+
+            console.error('Error registering homestay:', error);
+        
+        })
+       
+           
+        
+        
     };
 
     return (
         <>
             <Navbar loginUser={props.loginUser} countLike={props.countLike} setPending={props.setPending} logoutUser={props.logout}/>
             <div className="container mt-5" style={{ alignItems: 'center', justifyContent: 'center', width: '1300px' }}>
+            {successMessage && <div className="alert alert-success mt-3 mb-3" style={{ width: '80%', margin: '0 auto' }}>{successMessage}</div>}
+            {errorMessage && <div className="alert alert-danger mt-3 mb-3" style={{ width: '80%', margin: '0 auto' }}>{errorMessage}</div>}
                 <h2 style={{ width: '80%', margin: '0 auto' }}>Register Your Homestay</h2>
+               
                 <form onSubmit={handleSubmit} style={{ width: '80%', margin: '32px auto' }}>
                     <div className="mb-3">
                         <label htmlFor="title" className="form-label">Title <span className="text-danger">*</span></label>
@@ -125,18 +175,18 @@ const ListHomestay = (props) => {
                         <label className="form-label">Vegetarian Friendly <span className="text-danger">*</span></label>
                         <div>
                             <div className="form-check form-check-inline">
-                                <input className="form-check-input" type="radio" name="vegetarian_friendly" id="vegetarian_Yes" value="yes" checked={homestayData.vegetarian === 'yes'} onChange={() => setHomestayData({ ...homestayData, vegetarian: 'yes' })} />
+                                <input className="form-check-input" type="radio" name="vegetarian_friendly" id="vegetarian_Yes" value="yes" checked={homestayData.vegetarian_friendly === 'yes'} onChange={() => setHomestayData({ ...homestayData, vegetarian_friendly: 'yes' })} />
                                 <label className="form-check-label" htmlFor="vegetarian_Yes">Yes</label>
                             </div>
                             <div className="form-check form-check-inline">
-                                <input className="form-check-input" type="radio" name="vegetarian_friendly" id="vegetarian_No" value="no" checked={homestayData.vegetarian === 'no'} onChange={() => setHomestayData({ ...homestayData, vegetarian: 'no' })} />
+                                <input className="form-check-input" type="radio" name="vegetarian_friendly" id="vegetarian_No" value="no" checked={homestayData.vegetarian_friendly=== 'no'} onChange={() => setHomestayData({ ...homestayData, vegetarian_friendly: 'no' })} />
                                 <label className="form-check-label" htmlFor="vegetarian_No">No</label>
                             </div>
                         </div>
                     </div>
                     <div className="mb-4">
-                        <label htmlFor=" image_path" className="form-label">Upload Homestay Image <span className="text-danger">*</span></label>
-                        <input type="file" className="form-control" id="image_path" name="image_path" onChange={handleChange} required />
+                        <label htmlFor=" imageFile" className="form-label">Upload Homestay Image <span className="text-danger">*</span></label>
+                        <input type="file" className="form-control" id="imageFile" name="imageFile" onChange={handleChange} required />
                     </div>
                     <button type="submit" className="btn btn-primary">Register Homestay</button>
                 </form>

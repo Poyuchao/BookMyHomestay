@@ -143,8 +143,8 @@ const Homestay = (props) => {
         }
 
 
-        console.log("this is scored array with 16 object home + score " + scoredHomestays);
-        console.log("this is scored array with 16 object home " + scoredHomestays.map(scored => scored.home));
+        // console.log("this is scored array with 16 object home + score " + scoredHomestays);
+        // console.log("this is scored array with 16 object home " + scoredHomestays.map(scored => scored.home));
 
         // transforms this array of objects back into an array of homestay objects by 
         // extracting the home property from each element.

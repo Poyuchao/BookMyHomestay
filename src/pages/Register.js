@@ -11,7 +11,8 @@ const RegisterForm = (props) => {
 
     const navigate = useNavigate(); // use navigate hook
     const [showPassword, setShowPassword] = useState(false);
-
+    const [successMessage, setSuccessMessage] = useState('');
+    const [errorMessage, setErrorMessage] = useState('');
     const [formData, setFormData] = useState({
       fname: '',
       lname: '',
@@ -43,10 +44,47 @@ const RegisterForm = (props) => {
   
     const handleSubmit = (event) => {
       event.preventDefault();
-      console.log('Form Data:', formData);
-      FileService.post('/reg', formData);
+       // Set headers for JSON content type
+
+       const config = {
+        headers: {
+            'Content-Type': 'application/json'
+        }
+      };
       
-    };
+      console.log('Form Data:', formData);
+
+      // need to handle the response from the post request
+      FileService.post('/reg', formData,config).then((response)=>{
+        if(response.status==201){
+          console.log('User Registered Successfully');
+          setSuccessMessage('User Registered Successfully');
+        setTimeout(() => {
+          setSuccessMessage(''); // Clear the success message after 3 seconds
+          props.setPending(true); // trigger the spinner loader
+          navigate('/login');
+        },3000);
+      }
+      }).catch((error)=>{
+        if(error.response.status==401){
+          console.log(error.response.data);
+          setErrorMessage(error.response.data);
+          setTimeout(() => {
+            setErrorMessage(''); // Clear the error message after 3 seconds
+          },3000);
+        }
+        if(error.response.status==402){
+          console.log(error.response.data);
+          setErrorMessage("User with same email already exists");
+          setTimeout(() => {
+            setErrorMessage(''); // Clear the error message after 3 seconds
+          },3000);
+        }
+
+      // navigate('/login');
+      
+    })
+  };
 
   return (
     <>
@@ -57,6 +95,8 @@ const RegisterForm = (props) => {
           <div className="col-md-6">
             <div className="card-body p-5" style={{position:'relative'}}>
               <h2 className="mb-4 text-center">Register</h2>
+              {successMessage && <div className="alert alert-success mt-3 mb-3" style={{ width: '100%', margin: '0 auto' }}>{successMessage}</div>}
+              {errorMessage && <div className="alert alert-danger mt-3 mb-3" style={{ width: '100%', margin: '0 auto' }}>{errorMessage}</div>}
               <form onSubmit={handleSubmit}>
                 {/* Form fields */}
                 <div className="mb-3">

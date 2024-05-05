@@ -1,0 +1,8 @@
+.alert-transition {
+    transition: opacity 0.5s ease-out;
+    opacity: 0;  
+}
+
+.alert-visible {
+    opacity: 1; 
+}

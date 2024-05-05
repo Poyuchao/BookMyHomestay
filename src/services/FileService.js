@@ -21,26 +21,16 @@ class FileService{
 
     }
 
-    post(endPoint, formData) {
-        console.log(formData);
-    
-        // Set headers for JSON content type
-        const config = {
-            headers: {
-                'Content-Type': 'application/json'
-            }
-        };
-    
-        // Make sure formData is an object expected to be sent as JSON
-        // Axios will automatically convert JavaScript objects to JSON
-        httpLocal.post(endPoint, formData, config).then(response => {
-            console.log('Post response:', response.data);
-            return response.data;
-        })
-        .catch(error => {
-            console.error('Error posting data:', error.response ? error.response.data : error);
-            throw error; // Throw error to handle it in the component
-        });
+    post(endPoint, formData, config) {
+        return httpLocal.post(endPoint, formData, config)
+            .then(response => {
+                console.log('Post response status:', response.status);
+                return response; // Return the full response object
+            })
+            .catch(error => {
+                console.error('Error posting data:', error.response ? error.response.data : error);
+                throw error; // Throw the error to ensure it can be caught by the caller
+            });
     }
     
 
