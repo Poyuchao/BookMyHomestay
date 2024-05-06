@@ -196,11 +196,7 @@ function App() {
       // set the favorite list object to the temporary favorite list
       setFavoriteListObj(tmpFavoriteList);
    
-      if (response.data) {
-      
-        // setPending(true);
-        console.log("login success");
-      }
+   
         
       }}).catch((error) => {
         if (error.response.status == 400) {

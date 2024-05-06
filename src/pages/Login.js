@@ -56,8 +56,8 @@ const Login = (props) => {
     e.preventDefault();
     props.auth(user);
     
-    console.log("loginUser is" + props.loginUser);
-    console.log("this is user email " + user.email, "this is user password " + user.pass);
+    // console.log("loginUser is" + props.loginUser);
+    // console.log("this is user email " + user.email, "this is user password " + user.pass);
   }
 
   // console.log("here is loging page");
