@@ -27,7 +27,7 @@ export class client extends User{
    
     constructor(id,fname,lname,email,pass,gender,vegetarian,budget,location,type){
         super(id,fname,lname,email,pass,gender);
-        this.vegetarian = vegetarian;
+        this.vegetarian = vegetarian==1?true:false;
         this.budget = Number(budget);
         this.location = location;
         this.type = type;

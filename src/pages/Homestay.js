@@ -138,9 +138,9 @@ const Homestay = (props) => {
 
 
         // Display the homestays and their scores in the console
-        // for (let i = 0; i < scoredHomestays.length; i++) {
-        //     console.log(scoredHomestays[i].home.title + " " + "score is " + scoredHomestays[i].score);
-        // }
+        for (let i = 0; i < scoredHomestays.length; i++) {
+            console.log(scoredHomestays[i].home.title + " " + "score is " + scoredHomestays[i].score);
+        }
 
 
         // console.log("this is scored array with 16 object home + score " + scoredHomestays);

@@ -154,7 +154,7 @@ function App() {
         }
   
         if (response.data.type === 'client') {
-          console.log("check"+response.data.fname)
+          console.log("check vegetarian" + response.data.vegetarian);
           tmpUser = new client(response.data.id, response.data.fname, response.data.lname, response.data.email, response.data.pass, response.data.gender, response.data.vegetarian, response.data.budget, response.data.location, response.data.type);
         
          
