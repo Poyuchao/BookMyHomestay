@@ -64,12 +64,12 @@ const HomestayList = (props) => {
             alert("Please login first!!");
         } else {
             let homeObj = new HomestayObj(homestay.id, homestay.title, homestay.desc, homestay.location, homestay.rating, homestay.price_per_month, homestay.amenities, homestay.vegetarian_friendly, homestay.image_path);
-            console.log("click like " + homeObj.title)
+            // console.log("click like " + homeObj.title)
             props.favoriteListObj.toggleFavorite(homeObj);
-            console.log(homeObj.hid)
-            console.log("click like " + props.favoriteListObj.isFavorite(homeObj.hid))
-            console.log("checked favorite" + props.favoriteListObj ? (props.favoriteListObj.isFavorite(homestay.id) ? 'favorited' : 'notFavorited') : 'notFavorited');
-            console.log("checked list size" + props.favoriteListObj.getFavoriteSize());
+            // console.log(homeObj.hid)
+            // console.log("click like " + props.favoriteListObj.isFavorite(homeObj.hid))
+            // console.log("checked favorite" + props.favoriteListObj ? (props.favoriteListObj.isFavorite(homestay.id) ? 'favorited' : 'notFavorited') : 'notFavorited');
+            // console.log("checked list size" + props.favoriteListObj.getFavoriteSize());
             props.handleCountLike(props.favoriteListObj.isFavorite(homeObj.hid));
             setForceUpdate(!forceUpdate); // Toggle the boolean to force re-render
 

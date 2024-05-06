@@ -24,8 +24,7 @@ function App() {
   const [loginUser, setLoginUser] = useState(null);
   // user favorite list object -> initialize empty favorite list to avoid null pointer exception
   const [favoriteListObj, setFavoriteListObj] = useState(new Favorite(null));
-
-
+  const [errorMessage, setErrorMessage] = useState('');
 
 
   // const [homestays, setHomestay] = useState(null);
@@ -38,14 +37,17 @@ function App() {
 
   // read user data from json file
   useEffect(() => {
-    FileService.read("user").then(
-      (response) => {
-        setUsers(response.data);
-        // console.log(response.data);
-      },
+    
+    FileService.get("users").then(
+    (response) => {
+      setUsers(response.data);
+      // console.log(response.data);
+
+      console.log("user data get success");
+    },
       (rej) => {
         console.log(rej);
-      }
+    }
     )
     // pending animation for trick data loading
     setTimeout(() => {
@@ -129,37 +131,36 @@ function App() {
   // login 
   const Auth = (userObj) => {
 
-    let foundUser = null;
-    // iterate through the users array to find the user
-    for (let user of users) {
-      if (user.email === userObj.email && user.pass === userObj.pass) {
-        foundUser = user;
-        break;
-      }
-    }
+    const formData = new FormData();
+    formData.append('email', userObj.email);
+    formData.append('pass', userObj.pass);
 
     let tmpUser = null;
-    // if user is found, set the loginUser state to the found user
-    if (foundUser) {
-
-      if (foundUser.type === 'admin') {
-
-        tmpUser = new admin(foundUser.id, foundUser.fname, foundUser.lname, foundUser.email, foundUser.pass, foundUser.gender, foundUser.type);
-        console.log(" new admin tmpUser created " + tmpUser.fname + " " + tmpUser.lname + " " + tmpUser.email + " " + tmpUser.pass + " " + tmpUser.gender + " " + tmpUser.type + "" + tmpUser.budget)
-        
-     
-      }
-
-      if (foundUser.type === 'client') {
-
-        tmpUser = new client(foundUser.id, foundUser.fname, foundUser.lname, foundUser.email, foundUser.pass, foundUser.gender, foundUser.vegetarian, foundUser.budget, foundUser.location, foundUser.type);
-      
+    // console.log("userObj is " + userObj.email + " " + userObj.pass);
+    FileService.post('/log', formData)
+    .then((response) => {
+      if(response.status==201){
+        console.log('User logged in successfully');
+        console.log("response data is " + response.data);
+        setLoginUser(response.data);
        
-      }
 
-      // console.log("founder user is " + foundUser.id + " " + foundUser.fname + " " + foundUser.lname + " " + foundUser.email + " " )
+        if (response.data.type === 'admin') {
 
-      const tmpFavoriteList = new Favorite(foundUser.id);
+          tmpUser = new admin(response.data.id, response.data.fname, response.data.lname, response.data.email, response.data.pass, response.data.gender, response.data.type);
+          console.log(" new admin tmpUser created " + tmpUser.fname + " " + tmpUser.lname + " " + tmpUser.email + " " + tmpUser.pass + " " + tmpUser.gender + " " + tmpUser.type + "" + tmpUser.budget)
+          
+       
+        }
+  
+        if (response.data.type === 'client') {
+          console.log("check"+response.data.fname)
+          tmpUser = new client(response.data.id, response.data.fname, response.data.lname, response.data.email, response.data.pass, response.data.gender, response.data.vegetarian, response.data.budget, response.data.location, response.data.type);
+        
+         
+        }
+
+      const tmpFavoriteList = new Favorite(tmpUser.id);
       const storedFavoriteList = localStorage.getItem(tmpUser.id);
       console.log("data from local storage " + storedFavoriteList)
 
@@ -194,22 +195,47 @@ function App() {
       }
       // set the favorite list object to the temporary favorite list
       setFavoriteListObj(tmpFavoriteList);
-      console.log("login success");
-    }
+   
+      if (response.data) {
+      
+        // setPending(true);
+        console.log("login success");
+      }
+        
+      }}).catch((error) => {
+        if (error.response.status == 400) {
+          console.log(error.response.data);
+          setErrorMessage("Wrong email or password, please try again!");
+          setTimeout(() => {
+            setErrorMessage(''); // Clear the success message after 3 seconds
+          
+          },3000);
+        }
+      });
 
-    if (tmpUser) {
-      setLoginUser(tmpUser);
-      setPending(true);
-      console.log("login success");
-    }
+   
+    
+    
+
+    // iterate through the users array to find the user
+    // for (let user of users) {
+    //   if (user.email === userObj.email && user.pass === userObj.pass) {
+    //     foundUser = user;
+    //     break;
+    //   }
+    // }
+
+    // if user is found, set the loginUser state to the found user
+    
+    
     // if user is not found, alert user not found
-    else {
-      console.log("login failed");
-      alert("Login failed: User not found or incorrect password")
-      setLoginUser(null);
-    }
+    // else {
+    //   console.log("login failed");
+    //   alert("Login failed: User not found or incorrect password")
+    //   setLoginUser(null);
+    // }
 
-    console.log("user login logniUser is " + loginUser + " " + userObj.fname + " " + userObj.lname);
+    
   }
 
 
@@ -245,7 +271,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Link loginUser={loginUser} />}>
               <Route index element={<Homestay loginUser={loginUser} logout={logoutUser} countLike={countLike} handleCountLike={handleCountLike} favoriteListObj={favoriteListObj} setPending={setPending}/>} />
-              <Route path="login" element={<Login auth={Auth} loginUser={loginUser} countLike={countLike} setPending={setPending}  pending={pending} />} />
+              <Route path="login" element={<Login auth={Auth} loginUser={loginUser} countLike={countLike} setPending={setPending}  pending={pending} errorMessage={errorMessage} />} />
               <Route path="reg" element={<Register loginUser={loginUser} countLike={countLike} setPending={setPending}  pending={pending} />} />
               <Route path="list" element={<ListHomestay  loginUser={loginUser} countLike={countLike} setPending={setPending}  pending={pending} logout={logoutUser}/>} />
               <Route path="admin" element={<Admin loginUser={loginUser} logout={logoutUser} users={users} countLike={countLike} setPending={setPending} />} />

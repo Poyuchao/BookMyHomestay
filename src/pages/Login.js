@@ -4,9 +4,11 @@ import { useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
 
+
 const Login = (props) => {
   const [showPassword, setShowPassword] = useState(false);
-
+  const [successMessage, setSuccessMessage] = useState('');
+ 
  
   const [user, setUser] = useState({ email: "", pass: "" });
   const navigate = useNavigate(); // use navigate hook
@@ -25,7 +27,13 @@ const Login = (props) => {
       }
 
       if (props.loginUser.type === "client") {
-        navigate("/");
+        setSuccessMessage('User Login Successfully');
+        setTimeout(() => {
+          setSuccessMessage(''); // Clear the success message after 3 seconds
+          props.setPending(true); // trigger the spinner loader
+          navigate("/");
+        },3000);
+      
       }
     }
 
@@ -47,6 +55,7 @@ const Login = (props) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     props.auth(user);
+    
     console.log("loginUser is" + props.loginUser);
     console.log("this is user email " + user.email, "this is user password " + user.pass);
   }
@@ -70,6 +79,8 @@ const Login = (props) => {
                     <div className="col-12">
                       <div className="mb-5">
                         <h3>Log in</h3>
+                        {successMessage && <div className="alert alert-success mt-3 mb-3" style={{ width: '100%', margin: '0 auto' }}>{successMessage}</div>}
+                        {props.errorMessage && <div className="alert alert-danger mt-3 mb-3" style={{ width: '100%', margin: '0 auto' }}>{props.errorMessage}</div>}
                       </div>
                     </div>
                   </div>

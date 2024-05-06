@@ -32,6 +32,18 @@ class FileService{
                 throw error; // Throw the error to ensure it can be caught by the caller
             });
     }
+
+    get(endPoint) {
+        return httpLocal.get(endPoint)
+            .then(response => {
+                console.log('Get response status:', response.status);
+                return response; 
+            })
+            .catch(error => {
+                console.error('Error getting data:', error.response ? error.response.data : error);
+                throw error; // Throw the error to ensure it can be caught by the caller
+            });
+    }
     
 
 
