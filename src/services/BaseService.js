@@ -2,18 +2,21 @@ import { httpLocal } from "../http-common";
 
 export class BaseService {
   getHeaders(configHeaders = {}) {
-    const base = {
+    // Default headers
+    const baseHeaders = {
       "Content-Type": "application/json",
     };
 
+    // Add token to headers if it exists
     const authToken = localStorage.getItem("authToken");
 
     if (authToken && authToken !== "undefined") {
-      Reflect.set(base, "X-Token", `Bearer ${authToken}`);
+      // Use Reflect.set to add a new property to the object
+      Reflect.set(baseHeaders, "X-Token", `Bearer ${authToken}`);
     }
 
     return {
-      ...base,
+      ...baseHeaders,
       ...configHeaders,
     };
   }
@@ -54,7 +57,7 @@ export class BaseService {
       .then((response) => {
         this.logoutIfUnauthorized({ response });
 
-        return response.data;
+        return response;
       })
       .catch((error) => {
         console.error("Error posting data:", error);
@@ -67,6 +70,7 @@ export class BaseService {
     if (error.response && error.response.status === 401) {
       localStorage.removeItem("authToken");
       localStorage.removeItem("loginUser");
+      window.location.reload();
     }
   }
 }

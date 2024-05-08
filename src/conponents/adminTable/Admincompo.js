@@ -1,34 +1,37 @@
 import Table from "react-bootstrap/Table";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import { adminService } from "../../services/AdminService";
 
 const Admincompo = (props) => {
+  const [clientData, setClientData] = useState(props.clientData);
   const [searchTerm, setSearchTerm] = useState("");
+
+  useEffect(() => {
+    adminService.getAllUsers().then((response) => {
+      setClientData(response);
+    });
+  }, []);
 
   const handleSearchChange = (event) => {
     setSearchTerm(event.target.value);
+    if (event.target.value === "") {
+      adminService.getAllUsers().then((response) => {
+        setClientData(response);
+      });
+    }
+
+    adminService.searchUsers(event.target.value).then((response) => {
+      setClientData(response);
+    });
   };
 
   // Get the list of homestays that the client has favorited
-  const getTitleList = (clientId) => {
-    const favoriteData = localStorage.getItem(clientId);
-    if (favoriteData) {
-      const homestays = JSON.parse(favoriteData);
-      if (homestays.length === 0) {
-        return "No favorites stored";
-      }
+  const getTitleList = (client) => {
+    const homestays = client.likes;
+    if (homestays?.length) {
       return homestays.map((homestay) => homestay.title).join(", ");
     }
     return "No favorites stored";
-  };
-
-  // Get the number of homestays that the client has favorited
-  const getDreamCount = (clientId) => {
-    const favoriteData = localStorage.getItem(clientId);
-    if (favoriteData) {
-      const homestays = JSON.parse(favoriteData);
-      return homestays.length;
-    }
-    return 0;
   };
 
   // Filter the client data based on the search term
@@ -40,6 +43,8 @@ const Admincompo = (props) => {
       client.location.toLowerCase().includes(searchTerm.toLowerCase())
     );
   });
+
+  console.log("filteredClients", clientData);
 
   const equalWidthStyle = {
     width: "9.09%",
@@ -74,26 +79,28 @@ const Admincompo = (props) => {
             <th style={equalWidthStyle}>User Type</th>
             <th style={equalWidthStyle}>View User Dream List</th>
             <th style={equalWidthStyle}>Favorite Homestays</th>
+            <th style={equalWidthStyle}></th>
           </tr>
         </thead>
         <tbody>
-          {filteredClients.map((client) => {
-            return (
-              <tr key={client.id}>
-                <td>{client.id}</td>
-                <td>{client.fname}</td>
-                <td>{client.lname}</td>
-                <td>{client.userEmail}</td>
-                <td>{client.gender}</td>
-                <td>{client.vegetarian ? "Yes" : "No"}</td>
-                <td>{client.location}</td>
-                <td>{client.budget}</td>
-                <td>{client.type}</td>
-                <td>{getTitleList(client.id)}</td>
-                <td>{getDreamCount(client.id)}</td>
-              </tr>
-            );
-          })}
+          {clientData &&
+            clientData.map((client) => {
+              return (
+                <tr key={client.id}>
+                  <td>{client.id}</td>
+                  <td>{client.fname}</td>
+                  <td>{client.lname}</td>
+                  <td>{client.email}</td>
+                  <td>{client.gender}</td>
+                  <td>{client.vegetarian ? "Yes" : "No"}</td>
+                  <td>{client.location}</td>
+                  <td>{client.budget}</td>
+                  <td>{client.admin ? "Yes" : "No"}</td>
+                  <td>{getTitleList(client)}</td>
+                  <td>{client.likes.length}</td>
+                </tr>
+              );
+            })}
         </tbody>
       </Table>
     </>

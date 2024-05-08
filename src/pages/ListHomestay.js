@@ -60,7 +60,6 @@ const ListHomestay = (props) => {
     // Append image file to formData
     if (homestayData.imageFile) {
       formData.append("imageFile", homestayData.imageFile);
-    } else {
     }
 
     homestayService

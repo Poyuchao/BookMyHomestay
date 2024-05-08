@@ -7,11 +7,11 @@ const Admin = (props) => {
   const navigate = useNavigate(); // use navigate hook
 
   const [clientData, setClientData] = useState([]);
-  const [forceRender, setForceRender] = useState(false);
   // check if the user is logged in and if the user is an admin
   useEffect(() => {
     if (props.loginUser) {
-      if (props.loginUser.type !== "admin") {
+      console.log("loginUser", props.loginUser);
+      if (!props.loginUser.admin) {
         navigate("/login");
       }
 

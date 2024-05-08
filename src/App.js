@@ -44,29 +44,12 @@ function App() {
   }, 1500);
 
   // login
-  const Auth = async (userObj) => {
-    let foundUser = await authService.login(userObj).catch((err) => {
-      console.log(err);
-      return null;
-    });
-
-    if (foundUser) {
-      setLoginUser(foundUser.user);
-      setPending(true);
-      console.log("login success");
-    }
-    // if user is not found, alert user not found
-    else {
-      console.log("login failed");
-      alert("Login failed: User not found or incorrect password");
-      setLoginUser(null);
-    }
-  };
 
   // log out user
   const logoutUser = () => {
     authService.logout();
     setFavoriteListObj(new Favorite(null));
+    setLoginUser(null);
     setCountLike(0);
     setPending(true);
   };
@@ -106,11 +89,11 @@ function App() {
                 path="login"
                 element={
                   <Login
-                    auth={Auth}
                     loginUser={loginUser}
                     countLike={countLike}
                     setPending={setPending}
                     pending={pending}
+                    setLoginUser={setLoginUser}
                   />
                 }
               />

@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
 import FileService from "../services/FileService";
+import { authService } from "../services/AuthService";
 
 const RegisterForm = (props) => {
   const navigate = useNavigate(); // use navigate hook
@@ -41,14 +42,9 @@ const RegisterForm = (props) => {
     event.preventDefault();
     // Set headers for JSON content type
 
-    const config = {
-      headers: {
-        "Content-Type": "application/json",
-      },
-    };
-
     // need to handle the response from the post request
-    FileService.post("/reg", formData, config)
+    authService
+      .register(formData)
       .then((response) => {
         if (response.status == 201) {
           setSuccessMessage("User Registered Successfully");
@@ -60,20 +56,10 @@ const RegisterForm = (props) => {
         }
       })
       .catch((error) => {
-        if (error.response.status == 401) {
-          setErrorMessage(error.response.data);
-          setTimeout(() => {
-            setErrorMessage(""); // Clear the error message after 3 seconds
-          }, 3000);
-        }
-        if (error.response.status == 402) {
-          setErrorMessage("User with same email already exists");
-          setTimeout(() => {
-            setErrorMessage(""); // Clear the error message after 3 seconds
-          }, 3000);
-        }
-
-        // navigate('/login');
+        setErrorMessage(error.response.data.error);
+        setTimeout(() => {
+          setErrorMessage(""); // Clear the error message after 3 seconds
+        }, 3000);
       });
   };
 

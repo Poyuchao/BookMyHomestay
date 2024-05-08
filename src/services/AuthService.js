@@ -8,8 +8,10 @@ export class AuthService extends BaseService {
       return null;
     }
 
-    localStorage.setItem("authToken", loggedUser.session);
-    localStorage.setItem("loginUser", JSON.stringify(loggedUser.user));
+    console.log("User logged in", JSON.stringify(loggedUser, null, 4));
+
+    localStorage.setItem("authToken", loggedUser.data.session);
+    localStorage.setItem("loginUser", JSON.stringify(loggedUser.data.user));
 
     return loggedUser;
   }

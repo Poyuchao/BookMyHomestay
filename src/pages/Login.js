@@ -3,10 +3,12 @@ import Navbar from "../conponents/navbar/Navbar";
 import { useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
+import { authService } from "../services/AuthService";
 
 const Login = (props) => {
   const [showPassword, setShowPassword] = useState(false);
   const [successMessage, setSuccessMessage] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
 
   const [user, setUser] = useState({ email: "", pass: "" });
   const navigate = useNavigate(); // use navigate hook
@@ -17,18 +19,16 @@ const Login = (props) => {
 
   useEffect(() => {
     if (props.loginUser) {
-      if (props.loginUser.type === "admin") {
+      if (props.loginUser.admin) {
         navigate("/admin");
       }
 
-      if (props.loginUser.type === "client") {
-        setSuccessMessage("User Login Successfully");
-        setTimeout(() => {
-          setSuccessMessage(""); // Clear the success message after 3 seconds
-          props.setPending(true); // trigger the spinner loader
-          navigate("/");
-        }, 3000);
-      }
+      setSuccessMessage("User Login Successfully");
+      setTimeout(() => {
+        setSuccessMessage(""); // Clear the success message after 3 seconds
+        props.setPending(true); // trigger the spinner loader
+        navigate("/");
+      }, 3000);
     }
   }, [props.loginUser]);
 
@@ -36,6 +36,27 @@ const Login = (props) => {
     setUser((prev) => {
       return { ...prev, [e.target.name]: e.target.value };
     });
+  };
+
+  const Auth = async (userObj) => {
+    let foundUser = await authService.login(userObj).catch((err) => {
+      return err.response;
+    });
+
+    console.log("found user", foundUser);
+
+    if (foundUser && foundUser.data.user) {
+      console.log("found user", JSON.stringify(foundUser.data.user));
+      props.setLoginUser(foundUser.data.user);
+      props.setPending(true);
+      console.log("login success");
+      window.location.href = "/BookMyHomestay";
+    }
+    // if user is not found, alert user not found
+    else {
+      setErrorMessage(foundUser.data.error);
+      props.setLoginUser(null);
+    }
   };
 
   const goRegister = () => {
@@ -47,7 +68,7 @@ const Login = (props) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    props.auth(user);
+    Auth(user);
   };
 
   // console.log("here is loging page");
@@ -92,12 +113,12 @@ const Login = (props) => {
                             {successMessage}
                           </div>
                         )}
-                        {props.errorMessage && (
+                        {errorMessage && (
                           <div
                             className="alert alert-danger mt-3 mb-3"
                             style={{ width: "100%", margin: "0 auto" }}
                           >
-                            {props.errorMessage}
+                            {errorMessage}
                           </div>
                         )}
                       </div>
