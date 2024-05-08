@@ -1,58 +1,51 @@
-
-import Table from 'react-bootstrap/Table';
-import { client } from "../../class/user";
-import { useState } from 'react';
+import Table from "react-bootstrap/Table";
+import React, { useState } from "react";
 
 const Admincompo = (props) => {
-  console.log("here is admin compo ->each user data" + props.clientData)
-  const newClient = new client(1, "John", "Doe", "john.doe@example.com", "password123", "Male", true, 500, "New York", "client");
-  console.log("this is testing new client " + newClient.email);  // test email is private
-  console.log("this is testing new client " + newClient.userEmail);  // test userEmail funciton can be accessed
-
-
   const [searchTerm, setSearchTerm] = useState("");
 
   const handleSearchChange = (event) => {
     setSearchTerm(event.target.value);
-  }
+  };
 
   // Get the list of homestays that the client has favorited
   const getTitleList = (clientId) => {
     const favoriteData = localStorage.getItem(clientId);
     if (favoriteData) {
-        const homestays = JSON.parse(favoriteData);
-        if (homestays.length === 0) {
-            return 'No favorites stored';
-        }
-        return homestays.map(homestay => homestay.title).join(', ');
+      const homestays = JSON.parse(favoriteData);
+      if (homestays.length === 0) {
+        return "No favorites stored";
+      }
+      return homestays.map((homestay) => homestay.title).join(", ");
     }
-    return 'No favorites stored';
-}
+    return "No favorites stored";
+  };
 
   // Get the number of homestays that the client has favorited
   const getDreamCount = (clientId) => {
     const favoriteData = localStorage.getItem(clientId);
     if (favoriteData) {
       const homestays = JSON.parse(favoriteData);
-      return homestays.length; 
+      return homestays.length;
     }
-    return 0; 
-  }
-
+    return 0;
+  };
 
   // Filter the client data based on the search term
   const filteredClients = props.clientData.filter((client) => {
-    return client.fname.toLowerCase().includes(searchTerm.toLowerCase()) ||
+    return (
+      client.fname.toLowerCase().includes(searchTerm.toLowerCase()) ||
       client.lname.toLowerCase().includes(searchTerm.toLowerCase()) ||
       client.budget.toString().includes(searchTerm) ||
       client.location.toLowerCase().includes(searchTerm.toLowerCase())
+    );
   });
 
   const equalWidthStyle = {
-    width: '9.09%', 
-    overflow: 'hidden',
-    textOverflow: 'ellipsis',
-    whiteSpace: 'nowrap'
+    width: "9.09%",
+    overflow: "hidden",
+    textOverflow: "ellipsis",
+    whiteSpace: "nowrap",
   };
 
   return (
@@ -85,7 +78,6 @@ const Admincompo = (props) => {
         </thead>
         <tbody>
           {filteredClients.map((client) => {
-
             return (
               <tr key={client.id}>
                 <td>{client.id}</td>
@@ -106,8 +98,6 @@ const Admincompo = (props) => {
       </Table>
     </>
   );
-
-
-}
+};
 
 export default Admincompo;

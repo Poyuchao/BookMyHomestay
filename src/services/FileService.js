@@ -1,8 +1,5 @@
 // import http from "../http-common";
-import { httpClient,httpLocal} from '../http-common';
-
-
-
+import { httpClient, httpLocal } from "../http-common";
 
 class FileService{
 
@@ -53,7 +50,3 @@ class FileService{
 }
 
 export default new FileService();
-
-
-
-
