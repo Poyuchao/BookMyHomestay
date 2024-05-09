@@ -67,6 +67,10 @@ export class BaseService {
   }
 
   logoutIfUnauthorized(error) {
+    if (localStorage.getItem("authToken") === null) {
+      return;
+    }
+
     if (error.response && error.response.status === 401) {
       localStorage.removeItem("authToken");
       localStorage.removeItem("loginUser");

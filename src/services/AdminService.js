@@ -8,6 +8,12 @@ export class AdminService extends BaseService {
   searchUsers(query) {
     return super.httpGet(`/users?search=${query}`);
   }
+
+  unlockAccount(userId) {
+    return super.httpPost(`/admin/unlockAccount`, {
+      user_id: userId,
+    });
+  }
 }
 
 export const adminService = new AdminService();
