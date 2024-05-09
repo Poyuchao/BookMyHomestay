@@ -50,7 +50,7 @@ const Login = (props) => {
       props.setLoginUser(foundUser.data.user);
       props.setPending(true);
       console.log("login success");
-      window.location.href = "/BookMyHomestay";
+      navigate("/")
     }
     // if user is not found, alert user not found
     else {

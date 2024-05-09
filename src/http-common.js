@@ -12,7 +12,7 @@ const httpClient = axios.create({
 
 // Instance for POST requests
 const httpLocal = axios.create({
-  baseURL: "http://localhost/index.php/",
-});
+  baseURL: "http://localhost/webdev6/php_server_BookMyHomestay/src/index.php"
+})
 
 export { httpClient, httpLocal };
