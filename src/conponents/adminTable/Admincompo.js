@@ -34,15 +34,11 @@ const Admincompo = (props) => {
     return "No favorites stored";
   };
 
-  // Filter the client data based on the search term
-  const filteredClients = props.clientData.filter((client) => {
-    return (
-      client.fname.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      client.lname.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      client.budget.toString().includes(searchTerm) ||
-      client.location.toLowerCase().includes(searchTerm.toLowerCase())
-    );
-  });
+  const unlockAccount = (id) => {
+    adminService.unlockAccount(id).then((response) => {
+      handleSearchChange({ target: { value: searchTerm } });
+    });
+  };
 
   console.log("filteredClients", clientData);
 
@@ -65,7 +61,7 @@ const Admincompo = (props) => {
         />
       </div>
 
-      <Table striped="columns" className="mx-3 mb-3">
+      <Table striped="columns" className="mx-3 mb-3 overflow-x-scroll">
         <thead>
           <tr>
             <th>#</th>
@@ -79,7 +75,7 @@ const Admincompo = (props) => {
             <th style={equalWidthStyle}>User Type</th>
             <th style={equalWidthStyle}>View User Dream List</th>
             <th style={equalWidthStyle}>Favorite Homestays</th>
-            <th style={equalWidthStyle}></th>
+            <th style={equalWidthStyle}>Unlock</th>
           </tr>
         </thead>
         <tbody>
@@ -98,6 +94,15 @@ const Admincompo = (props) => {
                   <td>{client.admin ? "Yes" : "No"}</td>
                   <td>{getTitleList(client)}</td>
                   <td>{client.likes.length}</td>
+                  <td>
+                    <button
+                      disabled={client.failed_attempts > 0}
+                      className="btn btn-primary"
+                      onClick={() => unlockAccount(client.id)}
+                    >
+                      Unlock
+                    </button>
+                  </td>
                 </tr>
               );
             })}
