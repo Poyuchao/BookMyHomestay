@@ -17,7 +17,7 @@ import { httpLocal } from "./http-common";
 import { authService } from "./services/AuthService";
 
 function App() {
-  const [pending, setPending] = useState(true);
+  const [pending, setPending] = useState(false);
   const [countLike, setCountLike] = useState(0);
   const [loginUser, setLoginUser] = useState(authService.getLoggedUser());
 

@@ -207,6 +207,9 @@ const ListHomestay = (props) => {
                 "Smoke alarm on each",
                 "TV",
                 "Oven",
+                "Sofa",
+                "a separate bathroom",
+                "a separate bedroom"
               ].map((amenity) => (
                 <div key={amenity} className="col-md-4">
                   <div className="form-check">

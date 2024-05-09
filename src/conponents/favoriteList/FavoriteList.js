@@ -82,7 +82,7 @@ const FavoriteList = (props) => {
                       >
                         <FontAwesomeIcon icon={faTrash} />
                       </div>
-                      <p>{favHome.hid}</p>
+                      <p>{index+1}</p>
                       <div className="siImg-wrapper">
                         <img
                           src={`${favHome.images[0].image_path}`}

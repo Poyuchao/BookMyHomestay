@@ -48,14 +48,17 @@ const Login = (props) => {
     if (foundUser && foundUser.data.user) {
       console.log("found user", JSON.stringify(foundUser.data.user));
       props.setLoginUser(foundUser.data.user);
-      props.setPending(true);
-      console.log("login success");
-      navigate("/")
+      // props.setPending(true);
+      // console.log("login success");
+      // navigate("/")
     }
     // if user is not found, alert user not found
     else {
       setErrorMessage(foundUser.data.error);
-      props.setLoginUser(null);
+      // props.setLoginUser(null);
+      setTimeout(() => {
+        setErrorMessage(""); // Clear the error message after 3 seconds
+      }, 3000);
     }
   };
 

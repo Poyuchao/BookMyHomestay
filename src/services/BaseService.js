@@ -70,7 +70,7 @@ export class BaseService {
     if (error.response && error.response.status === 401) {
       localStorage.removeItem("authToken");
       localStorage.removeItem("loginUser");
-      window.location.reload();
+      //  window.location.reload();
     }
   }
 }
