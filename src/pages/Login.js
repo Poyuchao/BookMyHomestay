@@ -22,13 +22,15 @@ const Login = (props) => {
       if (props.loginUser.admin) {
         navigate("/admin");
       }
-
-      setSuccessMessage("User Login Successfully");
-      setTimeout(() => {
-        setSuccessMessage(""); // Clear the success message after 3 seconds
-        props.setPending(true); // trigger the spinner loader
-        navigate("/");
-      }, 3000);
+      else{
+        setSuccessMessage("User Login Successfully");
+        setTimeout(() => {
+          setSuccessMessage(""); // Clear the success message after 3 seconds
+          props.setPending(true); // trigger the spinner loader
+          navigate("/");
+        }, 3000);
+      }
+     
     }
   }, [props.loginUser]);
 

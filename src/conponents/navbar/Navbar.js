@@ -13,7 +13,7 @@ const Navbar = (props) => {
 
   useEffect(() => {
     // Check if in the admin page or not
-    if (props.loginUser && props.loginUser.type === "admin") {
+    if (props.loginUser && props.loginUser.admin) {
       setLogo("ManageMyHomestay");
     } else {
       setLogo("BookMyHomestay");
@@ -47,7 +47,7 @@ const Navbar = (props) => {
   };
 
   const handleLogoClick = () => {
-    if (props.loginUser && props.loginUser.type === "admin") {
+    if (props.loginUser && props.loginUser.admin) {
       if (location.pathname != "/admin") {
         props.setPending(true);
         navigate("/admin");
